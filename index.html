@@ -3,39 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Scooltools - أدوات مدرسية مجانية للطلاب">
-<title>Scooltools | أدوات مدرسية</title>
+<meta name="description" content="Scooltools - منصة عربية شاملة للأدوات، الصور، الفيديو، PDF، الذكاء الاصطناعي، المقالات والترفيه القانوني.">
+<title>Scooltools — كل أدواتك في مكان واحد</title>
 <style>
-:root{--blue:#1769e0;--dark:#10233f;--bg:#f5f8fc;--card:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Segoe UI",sans-serif;background:var(--bg);color:#17243a}
-header{background:linear-gradient(135deg,#1769e0,#38a1ff);color:#fff;padding:28px 18px}
-.wrap{max-width:1100px;margin:auto}.brand{font-size:30px;font-weight:800}.sub{opacity:.9;margin-top:6px}
-main{padding:25px 15px}.hero{text-align:center;margin:10px auto 28px}.hero h1{font-size:32px;margin:0 0 8px}.hero p{color:#607089}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 5px 22px #10233f12;border:1px solid #e7edf5}
-.card h2{margin:0 0 10px;color:var(--dark);font-size:20px}.card p{color:#66758a;font-size:14px}
-input,select,button,textarea{width:100%;padding:11px;border:1px solid #d6deea;border-radius:10px;font:inherit;margin-top:8px}
-button{background:var(--blue);color:#fff;border:0;cursor:pointer;font-weight:700}button:hover{filter:brightness(.95)}
-.result{margin-top:12px;background:#eef6ff;padding:12px;border-radius:10px;font-weight:700;min-height:22px}
-footer{text-align:center;color:#718096;padding:30px 15px}
+:root{--p:#1769e0;--p2:#5b5ff0;--dark:#101828;--muted:#667085;--bg:#f4f7fb;--card:#fff;--line:#e4e7ec;--ok:#12b76a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Segoe UI",sans-serif;background:var(--bg);color:var(--dark)}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.top{background:#0d1b34;color:#dbe7ff;text-align:center;padding:8px;font-size:13px}.top b{color:#fff}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 12px #1018280a}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:20px;padding:14px 18px}.logo{font-size:25px;font-weight:900;color:var(--p);white-space:nowrap}.logo span{color:var(--p2)}
+.navlinks{display:flex;gap:16px;flex:1;overflow:auto}.navlinks a{font-size:14px;color:#344054;white-space:nowrap}.navlinks a:hover{color:var(--p)}
+.search{width:260px;border:1px solid var(--line);border-radius:12px;padding:10px 13px;outline:none}.menu{display:none}
+.hero{background:linear-gradient(135deg,#0f4fd0,#624cf4);color:white;padding:58px 18px}.hero-inner{max-width:1180px;margin:auto}.hero h1{font-size:clamp(34px,6vw,62px);margin:0 0 14px}.hero p{font-size:18px;max-width:720px;line-height:1.8;color:#e9edff}.hero-search{display:flex;max-width:720px;background:#fff;padding:7px;border-radius:16px;margin-top:24px}.hero-search input{border:0;outline:0;flex:1;padding:13px;color:#222}.hero-search button{border:0;border-radius:11px;background:var(--p);color:#fff;padding:0 22px}
+.wrap{max-width:1180px;margin:auto;padding:36px 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}.section-head h2{margin:0;font-size:25px}.section-head p{margin:6px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;transition:.2s;box-shadow:0 5px 20px #10182808}.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #10182812}.icon{font-size:32px;margin-bottom:10px}.card h3{margin:4px 0 8px}.card p{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 15px}.btn{display:inline-block;border:0;border-radius:10px;padding:9px 13px;background:#eef4ff;color:var(--p);font-weight:700}.btn.primary{background:var(--p);color:#fff}
+.tool-area{display:none;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:20px}.tool-area.active{display:block}.tool-row{display:flex;gap:10px;flex-wrap:wrap}.tool-row input,.tool-row textarea,.tool-row select{border:1px solid var(--line);border-radius:10px;padding:11px;min-width:160px}.tool-row textarea{width:100%;min-height:130px}.result{margin-top:14px;padding:14px;background:#f8fafc;border-radius:12px;white-space:pre-wrap;word-break:break-word}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{background:#fff;border:1px solid var(--line);padding:18px;border-radius:16px}.stat b{font-size:26px;display:block;color:var(--p)}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.article{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}.article-img{height:150px;background:linear-gradient(135deg,#dbeafe,#ede9fe);display:grid;place-items:center;font-size:48px}.article-body{padding:18px}.tag{font-size:12px;color:var(--p);font-weight:700}
+.media-box{border:2px dashed #cbd5e1;border-radius:18px;padding:28px;text-align:center;background:#f8fafc}.preview{max-width:100%;max-height:360px;border-radius:12px;margin-top:15px}
+footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;margin:auto;padding:38px 18px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}.foot h3{color:#fff}.foot a{display:block;margin:8px 0;font-size:14px}.copy{text-align:center;border-top:1px solid #ffffff18;padding:15px;font-size:13px}
+.notice{font-size:13px;color:#667085;margin-top:10px}.hidden{display:none!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.article-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.search{display:none}.menu{display:block;margin-right:auto;background:none;border:0;font-size:25px}}
+@media(max-width:560px){.grid,.article-grid,.stats{grid-template-columns:1fr}.hero{padding:42px 18px}.hero-search{display:block;background:transparent;padding:0}.hero-search input,.hero-search button{width:100%;padding:13px;margin-top:8px;border-radius:11px}.foot{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="brand">📚 Scooltools</div><div class="sub">أدوات مدرسية بسيطة ومجانية للطلاب</div></div></header>
-<main class="wrap">
-<section class="hero"><h1>كل أدواتك الدراسية في مكان واحد</h1><p>اختر الأداة التي تحتاجها واستعملها مباشرة من الهاتف أو الحاسوب.</p></section>
-<section class="grid">
-<div class="card"><h2>🧮 حاسبة</h2><p>احسب العمليات الحسابية بسرعة.</p><input id="calc" placeholder="مثال: 25*4+10"><button onclick="calculate()">احسب</button><div class="result" id="calcResult"></div></div>
-<div class="card"><h2>📊 النسبة المئوية</h2><p>احسب نسبة رقم من رقم آخر.</p><input id="part" type="number" placeholder="القيمة"><input id="total" type="number" placeholder="المجموع"><button onclick="percent()">احسب النسبة</button><div class="result" id="percentResult"></div></div>
-<div class="card"><h2>🔄 تحويل الوحدات</h2><p>تحويل الكيلومترات والأمتار.</p><input id="unit" type="number" placeholder="القيمة"><select id="unitType"><option value="km-m">كيلومتر → متر</option><option value="m-km">متر → كيلومتر</option></select><button onclick="convert()">حوّل</button><div class="result" id="unitResult"></div></div>
-<div class="card"><h2>⏱️ مؤقت الدراسة</h2><p>ابدأ جلسة تركيز بسيطة.</p><select id="mins"><option value="25">25 دقيقة</option><option value="15">15 دقيقة</option><option value="5">5 دقائق</option></select><button onclick="timer()">ابدأ</button><div class="result" id="timerResult">جاهز</div></div>
+<div class="top">🚀 <b>Scooltools</b> — منصة واحدة للأدوات الرقمية والمحتوى المفيد</div>
+<header><nav class="nav"><a class="logo" href="#">S<span>cool</span>tools</a><div class="navlinks"><a href="#tools">الأدوات</a><a href="#media">الصور والفيديو</a><a href="#articles">المقالات</a><a href="#entertainment">ترفيه</a><a href="#ai">ذكاء اصطناعي</a></div><input class="search" id="siteSearch" placeholder="🔎 ابحث في الموقع"><button class="menu" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">☰</button></nav></header>
+
+<section class="hero"><div class="hero-inner">
+<h1>كل ما تحتاجه، في مكان واحد.</h1>
+<p>Scooltools منصة عربية تجمع الأدوات اليومية، معالجة الصور والفيديو، PDF، النصوص، الذكاء الاصطناعي، المقالات ومصادر المشاهدة القانونية.</p>
+<div class="hero-search"><input id="heroSearch" placeholder="ابحث عن أداة مثل: ضغط صورة، PDF، QR..."><button onclick="searchSite()">بحث</button></div>
+</div></section>
+
+<main>
+<section class="wrap" id="tools"><div class="section-head"><div><h2>🧰 الأدوات الأكثر استعمالاً</h2><p>أدوات تعمل مباشرة في المتصفح بدون تعقيد.</p></div></div>
+<div class="grid" id="toolGrid">
+<div class="card searchable"><div class="icon">🧮</div><h3>الحاسبة</h3><p>عمليات حسابية سريعة.</p><button class="btn primary" onclick="openTool('calc')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">📊</div><h3>النسبة المئوية</h3><p>احسب النسبة أو الزيادة والنقصان.</p><button class="btn primary" onclick="openTool('percent')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">📐</div><h3>تحويل الوحدات</h3><p>طول، وزن، ودرجة حرارة.</p><button class="btn primary" onclick="openTool('units')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">⏱️</div><h3>مؤقت الدراسة</h3><p>مؤقت بسيط لجلسات التركيز.</p><button class="btn primary" onclick="openTool('timer')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">🔳</div><h3>مولد QR</h3><p>حوّل أي نص أو رابط إلى QR.</p><button class="btn primary" onclick="openTool('qr')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">🔤</div><h3>أدوات النص</h3><p>كلمات، أحرف، أسطر وتنظيف النص.</p><button class="btn primary" onclick="openTool('text')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">🔐</div><h3>كلمة مرور قوية</h3><p>توليد كلمة مرور عشوائية.</p><button class="btn primary" onclick="openTool('password')">فتح الأداة</button></div>
+<div class="card searchable"><div class="icon">🧾</div><h3>JSON Formatter</h3><p>تنسيق JSON والتحقق منه.</p><button class="btn primary" onclick="openTool('json')">فتح الأداة</button></div>
+</div>
+
+<div class="tool-area" id="calc"><h3>🧮 الحاسبة</h3><div class="tool-row"><input id="calcIn" placeholder="مثال: 25*4+10/2"><button class="btn primary" onclick="calculate()">احسب</button></div><div class="result" id="calcOut"></div></div>
+<div class="tool-area" id="percent"><h3>📊 النسبة المئوية</h3><div class="tool-row"><input id="pa" type="number" placeholder="القيمة"><input id="pb" type="number" placeholder="النسبة %"><button class="btn primary" onclick="document.getElementById('percentOut').textContent=(+document.getElementById('pa').value*+document.getElementById('pb').value/100)">احسب</button></div><div class="result" id="percentOut"></div></div>
+<div class="tool-area" id="units"><h3>📐 تحويل الوحدات</h3><div class="tool-row"><input id="uv" type="number" placeholder="القيمة"><select id="uf"><option>km→m</option><option>m→km</option><option>kg→g</option><option>g→kg</option><option>°C→°F</option><option>°F→°C</option></select><button class="btn primary" onclick="convertUnit()">تحويل</button></div><div class="result" id="uout"></div></div>
+<div class="tool-area" id="timer"><h3>⏱️ مؤقت الدراسة</h3><div id="clock" style="font-size:42px;font-weight:900;margin:15px 0">25:00</div><button class="btn primary" onclick="startTimer()">ابدأ</button> <button class="btn" onclick="resetTimer()">إعادة</button></div>
+<div class="tool-area" id="qr"><h3>🔳 مولد QR</h3><div class="tool-row"><input id="qrText" style="flex:1" placeholder="اكتب رابطاً أو نصاً"><button class="btn primary" onclick="makeQR()">إنشاء</button></div><div id="qrOut" class="result"></div></div>
+<div class="tool-area" id="text"><h3>🔤 أدوات النص</h3><textarea id="textIn" placeholder="اكتب النص هنا..."></textarea><button class="btn primary" onclick="textStats()">تحليل النص</button><div class="result" id="textOut"></div></div>
+<div class="tool-area" id="password"><h3>🔐 مولد كلمة مرور</h3><div class="tool-row"><input id="plen" type="number" value="16" min="6" max="64"><button class="btn primary" onclick="genPass()">توليد</button></div><div class="result" id="passOut"></div></div>
+<div class="tool-area" id="json"><h3>🧾 JSON Formatter</h3><textarea id="jsonIn" placeholder='{"name":"Scooltools"}'></textarea><button class="btn primary" onclick="formatJSON()">تنسيق</button><div class="result" id="jsonOut"></div></div>
 </section>
+
+<section class="wrap" id="media"><div class="section-head"><div><h2>🖼️🎬 استوديو الصور والفيديو</h2><p>اختَر ملفاً من جهازك وجرّب الأدوات التي تعمل محلياً داخل المتصفح.</p></div></div>
+<div class="grid">
+<div class="card"><div class="icon">🖼️</div><h3>معاينة وضغط الصور</h3><p>اختَر صورة، عاينها، وحدد جودة التصدير والحجم.</p><button class="btn primary" onclick="openTool('imageTool')">فتح</button></div>
+<div class="card"><div class="icon">✂️</div><h3>قص وتغيير حجم الصورة</h3><p>إعادة تحجيم الصور قبل مشاركتها أو رفعها.</p><button class="btn primary" onclick="openTool('imageTool')">فتح</button></div>
+<div class="card"><div class="icon">🎞️</div><h3>معاينة الفيديو</h3><p>رفع فيديو من جهازك ومعاينته داخل الموقع.</p><button class="btn primary" onclick="openTool('videoTool')">فتح</button></div>
+<div class="card"><div class="icon">📥</div><h3>روابط الفيديو</h3><p>فتح رابط الوسائط المباشر إذا كان الموقع يسمح بذلك.</p><button class="btn primary" onclick="openTool('videoLink')">فتح</button></div>
+</div>
+<div class="tool-area" id="imageTool"><h3>🖼️ استوديو الصور</h3><div class="media-box"><input type="file" id="imgFile" accept="image/*" onchange="loadImage(event)"><div id="imgPreview"></div></div><div class="tool-row" style="margin-top:14px"><input id="imgW" type="number" placeholder="العرض الجديد"><select id="imgFormat"><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option><option value="image/png">PNG</option></select><button class="btn primary" onclick="resizeImage()">تصدير</button></div><div class="result" id="imgOut"></div></div>
+<div class="tool-area" id="videoTool"><h3>🎬 معاينة الفيديو</h3><div class="media-box"><input type="file" id="vidFile" accept="video/*" onchange="loadVideo(event)"><div id="vidPreview"></div></div></div>
+<div class="tool-area" id="videoLink"><h3>📥 رابط الوسائط</h3><input id="mediaUrl" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px" placeholder="ألصق رابط ملف فيديو مباشر"><button class="btn primary" style="margin-top:10px" onclick="openMedia()">فتح الرابط</button><div class="notice">هذه الأداة لا تتجاوز حماية المواقع أو حقوق النشر ولا تستخرج فيديوهات من خدمات تمنع التنزيل.</div></div>
+</section>
+
+<section class="wrap" id="ai"><div class="section-head"><div><h2>🤖 الذكاء الاصطناعي</h2><p>واجهة موحدة لخدمات AI يمكن ربطها لاحقاً بواجهات API.</p></div></div>
+<div class="grid"><div class="card"><div class="icon">✍️</div><h3>كاتب AI</h3><p>تجهيز النصوص والأفكار والملخصات عند ربط API.</p><button class="btn" onclick="alert('هذه الواجهة جاهزة للربط بخدمة AI عند إضافة مفتاح API.')">فتح</button></div><div class="card"><div class="icon">🖼️</div><h3>توليد الصور</h3><p>مكان مخصص لربط مولد صور بالذكاء الاصطناعي.</p><button class="btn" onclick="alert('واجهة توليد الصور جاهزة للربط بخدمة API.')">فتح</button></div><div class="card"><div class="icon">🎙️</div><h3>الصوت والنص</h3><p>قسم لتحويل النص والصوت بعد ربط الخدمة المناسبة.</p><button class="btn" onclick="alert('واجهة الصوت جاهزة للربط.')">فتح</button></div><div class="card"><div class="icon">💡</div><h3>أفكار ومساعدة</h3><p>مساعد عام يمكن ربطه بموديل ذكاء اصطناعي.</p><button class="btn" onclick="alert('واجهة المساعد جاهزة للربط.')">فتح</button></div></div>
+</section>
+
+<section class="wrap" id="articles"><div class="section-head"><div><h2>📰 المقالات والمحتوى</h2><p>قسم قابل للتوسع بالمقالات والتصنيفات والبحث.</p></div></div>
+<div class="article-grid"><article class="article"><div class="article-img">💻</div><div class="article-body"><span class="tag">تقنية</span><h3>كيف تستفيد من أدوات الويب اليومية؟</h3><p>دليل عملي لاختيار الأدوات المناسبة للعمل والدراسة.</p></div></article><article class="article"><div class="article-img">🤖</div><div class="article-body"><span class="tag">ذكاء اصطناعي</span><h3>طرق استخدام الذكاء الاصطناعي بشكل مفيد</h3><p>أفكار لاستخدام AI في التعلم والإنتاجية.</p></div></article><article class="article"><div class="article-img">📱</div><div class="article-body"><span class="tag">موبايل</span><h3>أدوات مفيدة للهاتف</h3><p>مجموعة أدوات تعمل من المتصفح بدون تثبيت.</p></div></article></div></section>
+
+<section class="wrap" id="entertainment"><div class="section-head"><div><h2>🎬 الترفيه والمشاهدة</h2><p>محتوى قانوني ومصادر مشاهدة رسمية، بدون استضافة أو نسخ غير مرخصة.</p></div></div>
+<div class="grid"><div class="card"><div class="icon">🍿</div><h3>أفلام ومحتوى مجاني قانوني</h3><p>مكان لعرض مصادر ومكتبات توفر محتوى مرخصاً أو ضمن الملكية العامة.</p><button class="btn" onclick="alert('يمكن إضافة مصادر قانونية هنا حسب البلد والمحتوى المتاح.')">استكشاف</button></div><div class="card"><div class="icon">▶️</div><h3>منصات المشاهدة</h3><p>روابط للخدمات الرسمية والمصادر التي تسمح بالمشاهدة.</p><button class="btn" onclick="alert('يمكن إضافة روابط الخدمات الرسمية هنا.')">استكشاف</button></div><div class="card"><div class="icon">🎥</div><h3>فيديوهات مجانية</h3><p>دليل لمصادر فيديو مرخصة يمكن استخدامها بشكل قانوني.</p><button class="btn" onclick="alert('قسم المصادر المرخصة جاهز للإضافة.')">استكشاف</button></div><div class="card"><div class="icon">📺</div><h3>قنوات ومحتوى</h3><p>تنظيم روابط القنوات والمحتوى العام في مكان واحد.</p><button class="btn" onclick="alert('قسم القنوات جاهز للتوسعة.')">استكشاف</button></div></div></section>
+
+<section class="wrap"><div class="stats"><div class="stat"><b>30+</b>فكرة أداة قابلة للإضافة</div><div class="stat"><b>100%</b>متجاوب مع الهاتف</div><div class="stat"><b>0</b>حاجة لتثبيت الأدوات الأساسية</div><div class="stat"><b>∞</b>قابل للتوسعة</div></div></section>
 </main>
-<footer>© 2026 Scooltools — أدوات تعليمية مجانية</footer>
+
+<footer><div class="foot"><div><h3>Scooltools</h3><p>منصة عربية متعددة الخدمات للأدوات والمحتوى الرقمي.</p></div><div><h3>الأدوات</h3><a href="#tools">أدوات مدرسية</a><a href="#media">الصور والفيديو</a><a href="#ai">الذكاء الاصطناعي</a></div><div><h3>المحتوى</h3><a href="#articles">المقالات</a><a href="#entertainment">الترفيه</a></div><div><h3>المساعدة</h3><a href="#">من نحن</a><a href="#">الخصوصية</a><a href="#">تواصل معنا</a></div></div><div class="copy">© 2026 Scooltools — جميع الحقوق محفوظة</div></footer>
+
 <script>
-function calculate(){const v=document.getElementById('calc').value.trim();try{if(!/^[0-9+\-*/().%\s]+$/.test(v))throw 0;document.getElementById('calcResult').textContent='النتيجة: '+Function('return '+v)()}catch(e){document.getElementById('calcResult').textContent='أدخل عملية حسابية صحيحة.'}}
-function percent(){const a=Number(part.value),b=Number(total.value);percentResult.textContent=b?'النتيجة: '+(a/b*100).toFixed(2)+'%':'أدخل المجموع.'}
-function convert(){const n=Number(unit.value);unitResult.textContent='النتيجة: '+(unitType.value==='km-m'?n*1000:n/1000)}
-let t;function timer(){clearInterval(t);let s=Number(mins.value)*60;const out=document.getElementById('timerResult');const tick=()=>{let m=Math.floor(s/60),x=String(s%60).padStart(2,'0');out.textContent=m+':'+x;if(s--<=0){clearInterval(t);out.textContent='انتهى الوقت 🎉'}};tick();t=setInterval(tick,1000)}
+let timerSec=1500,timerInt=null,imgObj=null;
+function openTool(id){document.querySelectorAll('.tool-area').forEach(x=>x.classList.remove('active'));const e=document.getElementById(id);if(e){e.classList.add('active');e.scrollIntoView({behavior:'smooth',block:'center'})}}
+function calculate(){const s=document.getElementById('calcIn').value;try{if(!/^[0-9+\-*/().%\s]+$/.test(s))throw 0;document.getElementById('calcOut').textContent=Function('return '+s)()}catch(e){document.getElementById('calcOut').textContent='عملية غير صالحة'}}
+function convertUnit(){let v=+uv.value,f=uf.value,r=f==='km→m'?v*1000:f==='m→km'?v/1000:f==='kg→g'?v*1000:f==='g→kg'?v/1000:f==='°C→°F'?v*9/5+32:(v-32)*5/9;uout.textContent=r}
+function startTimer(){if(timerInt)return;timerInt=setInterval(()=>{if(timerSec<=0){clearInterval(timerInt);timerInt=null;alert('انتهى الوقت!');return}timerSec--;clock.textContent=String(Math.floor(timerSec/60)).padStart(2,'0')+':'+String(timerSec%60).padStart(2,'0')},1000)}
+function resetTimer(){clearInterval(timerInt);timerInt=null;timerSec=1500;clock.textContent='25:00'}
+function makeQR(){let t=encodeURIComponent(qrText.value);qrOut.innerHTML='<img class="preview" alt="QR" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data='+t+'"><div class="notice">تحتاج الأداة لاتصال بالإنترنت لخدمة QR الخارجية.</div>'}
+function textStats(){let t=textIn.value;textOut.textContent='الأحرف: '+t.length+'\nالكلمات: '+(t.trim()?t.trim().split(/\s+/).length:0)+'\nالأسطر: '+(t? t.split(/\n/).length:0)}
+function genPass(){let n=Math.min(64,Math.max(6,+plen.value||16)),c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*',s='';for(let i=0;i<n;i++)s+=c[Math.floor(Math.random()*c.length)];passOut.textContent=s}
+function formatJSON(){try{jsonOut.textContent=JSON.stringify(JSON.parse(jsonIn.value),null,2)}catch(e){jsonOut.textContent='JSON غير صالح'}}
+function loadImage(e){let f=e.target.files[0];if(!f)return;let u=URL.createObjectURL(f);let im=new Image();im.onload=()=>{imgObj=im;imgPreview.innerHTML='<img class="preview" src="'+u+'"><p>'+im.width+' × '+im.height+' px</p>'};im.src=u}
+function resizeImage(){if(!imgObj){imgOut.textContent='اختَر صورة أولاً';return}let w=+imgW.value||imgObj.width,h=Math.round(imgObj.height*w/imgObj.width),c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(imgObj,0,0,w,h);c.toBlob(b=>{let u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='scooltools-image';a.click();imgOut.textContent='تم تجهيز الصورة للتنزيل.'},imgFormat.value,.86)}
+function loadVideo(e){let f=e.target.files[0];if(!f)return;let u=URL.createObjectURL(f);vidPreview.innerHTML='<video class="preview" controls src="'+u+'"></video>'}
+function openMedia(){let u=mediaUrl.value.trim();if(/^https?:\/\//.test(u))window.open(u,'_blank','noopener');else alert('أدخل رابطاً صحيحاً يبدأ بـ https://')}
+function searchSite(){let q=(heroSearch.value||siteSearch.value).toLowerCase().trim();if(!q)return;let cards=[...document.querySelectorAll('.card,.article')];let found=cards.find(x=>x.innerText.toLowerCase().includes(q));if(found){found.scrollIntoView({behavior:'smooth',block:'center'});found.style.outline='3px solid #1769e0';setTimeout(()=>found.style.outline='',1500)}else alert('لم نجد نتيجة مطابقة حالياً.')}
+siteSearch.addEventListener('input',()=>{let q=siteSearch.value.toLowerCase();document.querySelectorAll('.searchable').forEach(c=>c.style.display=!q||c.innerText.toLowerCase().includes(q)?'':'none')});
 </script>
 </body></html>
