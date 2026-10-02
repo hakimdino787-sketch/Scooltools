@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myscool.vercel.app/sitemap.xml
