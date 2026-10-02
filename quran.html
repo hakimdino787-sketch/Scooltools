@@ -45,8 +45,8 @@ const $=id=>document.getElementById(id);
 function normalize(s){return s.normalize('NFKC').replace(/[ًٌٍَُِّْـٰۖۗۚۛۜۙۘۚ۝۞]/g,'').replace(/[إأٱآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').toLowerCase();}
 function render(n=1,filter=''){
  const g=groups[n-1]||[]; $('title').textContent=names[n-1]+' — '+g.length+' آية';
- const q=normalize(filter); const shown=q?g.filter(x=>normalize(x).includes(q)):g;
- $('ayahs').innerHTML=shown.map((t,i)=>'<div class="ayah">'+t+' <span class="num">'+(g.indexOf(t)+1)+'</span></div>').join('')||'<p>لا توجد نتيجة.</p>';
+ const q=normalize(filter); const shown=g.map((text,index)=>({text,index})).filter(x=>!q||normalize(x.text).includes(q));
+ $('ayahs').innerHTML=shown.map(x=>'<div class="ayah">'+x.text+' <span class="num">'+(x.index+1)+'</span></div>').join('')||'<p>لا توجد نتيجة.</p>';
 }
 function build(){
  let pos=0;
