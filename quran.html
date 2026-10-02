@@ -7,35 +7,22 @@
 <link rel="canonical" href="https://myscool.vercel.app/quran.html">
 <title>القرآن الكريم كاملاً | Scooltools</title>
 <style>
-body{font-family:Arial,"Noto Naskh Arabic",sans-serif;background:#f4f7fb;color:#101828;margin:0}
-main{max-width:1000px;margin:auto;padding:24px 16px}.top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-a{color:#1769e0}.card{background:#fff;padding:20px;border-radius:18px;border:1px solid #e4e7ec;margin:16px 0}
-select,input{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:10px;box-sizing:border-box;font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:15px}
-button{border:1px solid #d0d5dd;background:#fff;border-radius:12px;padding:12px;cursor:pointer;font-size:15px}
-button:hover{background:#f8fafc}.ayah{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:27px;line-height:2.1;padding:18px 4px;border-bottom:1px solid #eaecf0}
-.num{display:inline-flex;width:32px;height:32px;border:1px solid #98a2b3;border-radius:50%;align-items:center;justify-content:center;font:14px Arial;margin:0 8px}
-.notice{font-size:14px;color:#475467;line-height:1.8}.status{font-weight:700}
+:root{--bg:#f4f7fb;--card:#fff;--text:#101828;--muted:#667085;--line:#e4e7ec;--primary:#1769e0;--soft:#eef4ff;--gold:#b58105}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Arial,"Noto Naskh Arabic","Amiri",sans-serif;background:var(--bg);color:var(--text);margin:0}
+header{background:linear-gradient(135deg,#123b6d,#1769e0);color:#fff;padding:18px 16px;box-shadow:0 4px 18px #10182818}.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:12px;align-items:center}.brand{font-weight:800;font-size:20px}.nav a{color:#fff;text-decoration:none;background:#ffffff18;padding:9px 13px;border-radius:10px}
+main{max-width:1100px;margin:auto;padding:22px 16px}.hero{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:16px;box-shadow:0 8px 28px #1018280a}.hero h1{margin:0 0 8px;font-size:30px}.hero p{color:var(--muted);line-height:1.8;margin:7px 0}.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-weight:700;margin-bottom:7px}.field input,.field select{width:100%;padding:13px;border:1px solid #d0d5dd;border-radius:12px;background:#fff;font-size:16px;outline:none}.field input:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px #1769e018}
+.card{background:var(--card);padding:18px;border-radius:18px;border:1px solid var(--line);margin:16px 0}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pill{background:var(--soft);color:#174ea6;border-radius:999px;padding:7px 11px;font-size:13px;font-weight:700}.status{font-weight:700;color:#344054;margin-top:12px}.ayah{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:29px;line-height:2.2;padding:19px 8px;border-bottom:1px solid #eaecf0}.num{display:inline-flex;width:34px;height:34px;border:1px solid #98a2b3;border-radius:50%;align-items:center;justify-content:center;font:14px Arial;margin:0 8px;color:#344054;background:#fafafa}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:9px}.surah-btn{border:1px solid #d0d5dd;background:#fff;border-radius:12px;padding:12px;cursor:pointer;font-size:15px}.surah-btn:hover{background:#f8fafc;border-color:#98a2b3}.notice{font-size:14px;color:#475467;line-height:1.8}.notice a{color:var(--primary);font-weight:700}.source{border-right:4px solid var(--gold);background:#fffbeb;padding:13px 15px;border-radius:10px}.empty,.loading{color:var(--muted);padding:25px;text-align:center}footer{max-width:1100px;margin:auto;padding:10px 16px 30px;color:var(--muted);font-size:13px}@media(max-width:700px){.controls{grid-template-columns:1fr}.hero h1{font-size:25px}.ayah{font-size:25px;line-height:2.05}.nav{align-items:flex-start}}
 </style>
 </head>
 <body>
+<header><div class="nav"><div class="brand">Scooltools • القرآن الكريم</div><a href="/">← الرئيسية</a></div></header>
 <main>
-<div class="top"><a href="/">← العودة إلى Scooltools</a></div>
-<div class="card">
-<h1>📖 القرآن الكريم</h1>
-<p>القرآن الكريم كاملاً بالرسم العثماني، مع جميع السور والآيات والبحث.</p>
-<p class="notice">النص القرآني لا نكتبه يدوياً داخل الموقع؛ يتم تحميله من نص Tanzil بالرسم العثماني. للمصدر الرسمي وتحديثات النص راجع <a href="https://tanzil.net/download/" target="_blank" rel="noopener">Tanzil — تنزيل نص القرآن</a>. النص يُعرض دون تعديل.</p><p class="notice">نسبة المصدر: Tanzil Project — Quran Text، وفق شروط استخدام Tanzil.</p>
-</div>
-<div class="card">
-<label for="surah">اختر السورة</label>
-<select id="surah"></select>
-<label for="search" style="display:block;margin-top:12px">ابحث في الآيات</label>
-<input id="search" placeholder="اكتب كلمة أو جزءاً من آية..." autocomplete="off">
-<div id="status" class="status" style="margin-top:12px">جاري تحميل النص...</div>
-</div>
-<div class="card"><h2 id="title">السور</h2><div id="ayahs"></div></div>
-<div class="card"><h2>جميع السور</h2><div id="surahs" class="grid"></div></div>
-</main>
+<section class="hero"><h1>📖 القرآن الكريم</h1><p>قراءة القرآن الكريم كاملاً بالرسم العثماني داخل واجهة Scooltools، مع اختيار السور والبحث في الآيات.</p><div class="source notice"><strong>المصدر:</strong> Tanzil Project — Quran Text. النص يُعرض كما هو من مصدر Tanzil دون تعديل. <a href="https://tanzil.net/" target="_blank" rel="noopener noreferrer">زيارة Tanzil</a> · <a href="https://tanzil.net/download/" target="_blank" rel="noopener noreferrer">تحديثات وتنزيل النص</a></div></section>
+<section class="card"><div class="controls"><div class="field"><label for="surah">اختر السورة</label><select id="surah"></select></div><div class="field"><label for="search">البحث في الآيات</label><input id="search" placeholder="اكتب كلمة أو جزءاً من آية..." autocomplete="off"></div></div><div class="toolbar" style="margin-top:12px"><span id="status" class="pill">جاري تحميل القرآن...</span><span id="resultCount" class="pill">—</span></div></section>
+<section class="card"><div class="toolbar" style="justify-content:space-between"><h2 id="title" style="margin:0">السور</h2><button id="clearSearch" class="surah-btn" type="button">مسح البحث</button></div><div id="ayahs"><div class="loading">جاري تحميل النص الموثوق...</div></div></section>
+<section class="card"><h2 style="margin-top:0">جميع السور</h2><div id="surahs" class="grid"></div></section>
+<section class="card notice"><strong>ملاحظة المصدر:</strong> ترخيص نص Tanzil يسمح باستخدامه في المواقع والتطبيقات بشرط الإشارة بوضوح إلى Tanzil Project ووضع رابط إلى tanzil.net، كما يمنع تغيير النص. لذلك لا يتم تعديل الآيات داخل Scooltools.</section>
+</main><footer>Scooltools — القرآن الكريم · مصدر النص: Tanzil Project</footer>
 <script>
 // النص يُحمّل كما هو من نسخة Tanzil Uthmani؛ لا نعيد كتابة الآيات داخل الموقع.\n// المصدر الرسمي والتحديثات: https://tanzil.net/download/\nconst SOURCE='https://raw.githubusercontent.com/gptforjoomla/Tanzil/master/Packages/com_tanzil/site/resources/quran/quran-uthmani.txt';
 const names=["الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم","لقمان","السجدة","الأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر","فصلت","الشورى","الزخرف","الدخان","الجاثية","الأحقاف","محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
@@ -46,15 +33,16 @@ function normalize(s){return s.normalize('NFKC').replace(/[ًٌٍَُِّْـٰ�
 function render(n=1,filter=''){
  const g=groups[n-1]||[]; $('title').textContent=names[n-1]+' — '+g.length+' آية';
  const q=normalize(filter); const shown=g.map((text,index)=>({text,index})).filter(x=>!q||normalize(x.text).includes(q));
- $('ayahs').innerHTML=shown.map(x=>'<div class="ayah">'+x.text+' <span class="num">'+(x.index+1)+'</span></div>').join('')||'<p>لا توجد نتيجة.</p>';
+ $('resultCount').textContent=q?'النتائج: '+shown.length:'الآيات: '+shown.length;
+ $('ayahs').innerHTML=shown.map(x=>'<div class="ayah">'+x.text+' <span class="num">'+(x.index+1)+'</span></div>').join('')||'<div class="empty">لا توجد نتائج في هذه السورة.</div>';
 }
 function build(){
  let pos=0;
  for(let s=0;s<114;s++){groups[s]=verses.slice(pos,pos+counts[s]);pos+=counts[s];}
  if(pos!==verses.length) throw new Error('عدد الآيات لا يطابق بنية السور');
  const sel=$('surah'); names.forEach((n,i)=>{const o=document.createElement('option');o.value=i+1;o.textContent=(i+1)+' — '+n+' ('+counts[i]+' آية)';sel.appendChild(o)});
- const box=$('surahs'); names.forEach((n,i)=>{const b=document.createElement('button');b.textContent=(i+1)+' — '+n;b.onclick=()=>{sel.value=i+1;render(i+1,$('search').value);scrollTo({top:0,behavior:'smooth'})};box.appendChild(b)});
- sel.onchange=()=>render(+sel.value,$('search').value); $('search').oninput=()=>render(+sel.value,$('search').value); loaded=true; render(1);
+ const box=$('surahs'); names.forEach((n,i)=>{const b=document.createElement('button');b.className='surah-btn';b.textContent=(i+1)+' — '+n;b.onclick=()=>{sel.value=i+1;render(i+1,$('search').value);scrollTo({top:0,behavior:'smooth'})};box.appendChild(b)});
+ sel.onchange=()=>render(+sel.value,$('search').value); $('search').oninput=()=>render(+sel.value,$('search').value); $('clearSearch').onclick=()=>{$('search').value='';render(+sel.value,'');$('search').focus()}; loaded=true; render(1);
 }
 fetch(SOURCE).then(r=>{if(!r.ok)throw new Error('تعذر تحميل مصدر القرآن');return r.text()}).then(txt=>{
  verses=txt.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
