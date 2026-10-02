@@ -58,7 +58,7 @@ footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;m
 </head>
 <body>
 <div class="top">🚀 <b>Scooltools</b> — منصة واحدة للأدوات الرقمية والمحتوى المفيد</div>
-<header><nav class="nav"><a class="logo" href="#">S<span>cool</span>tools</a><div class="navlinks"><a href="#tools">الأدوات</a><a href="#games">🧠 ألعاب العقل</a><a href="quran.html">📖 القرآن</a><a href="stories.html">📕 القصص</a><a href="#articles">المقالات</a><a href="#media">الصور والفيديو</a><a href="#ai">ذكاء اصطناعي</a></div><input class="search" id="siteSearch" placeholder="🔎 ابحث في الموقع"><button class="menu" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">☰</button></nav></header>
+<header><nav class="nav"><a class="logo" href="#">S<span>cool</span>tools</a><div class="navlinks"><a href="#tools">الأدوات</a><a href="#games">🧠 ألعاب العقل</a><a href="quran.html">📖 القرآن</a><a href="stories.html">📕 القصص</a><a href="#articles">المقالات</a><a href="#media">الصور والفيديو</a><a href="#productivity">الإنتاجية</a><a href="#ai">ذكاء اصطناعي</a><a href="learning.html">التعلم</a></div><input class="search" id="siteSearch" placeholder="🔎 ابحث في الموقع"><button class="menu" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">☰</button></nav></header>
 
 <section class="hero"><div class="hero-inner">
 <h1>كل ما تحتاجه، في مكان واحد.</h1>
@@ -133,7 +133,7 @@ footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;m
 <div class="card"><div class="icon">🎙️</div><h3>الصوت والنص</h3><p>قسم مخصص لإضافة تحويل الصوت والنص في مرحلة لاحقة.</p><button class="btn" onclick="alert('قسم الصوت جاهز للتوسعة.')">معرفة المزيد</button></div>
 </div>
 <div class="tool-area" id="aiWriter"><h3>✍️ كاتب ومساعد AI</h3><textarea id="aiPrompt" placeholder="مثال: اكتب لي مقدمة قصيرة عن الذكاء الاصطناعي..."></textarea><button class="btn primary" onclick="callAI()">إرسال إلى AI</button><div class="result" id="aiOut"></div><div class="notice">إذا ظهر أن الخدمة غير مهيأة، خاص إضافة AI_API_KEY في Environment Variables ديال Vercel.</div></div>
-<div class="tool-area" id="aiTranslate"><h3>🌍 الترجمة</h3><textarea id="translateIn" placeholder="اكتب النص المراد ترجمته..."></textarea><div class="tool-row"><select id="translateTarget"><option>Arabic</option><option>English</option><option>French</option><option>Spanish</option><option>German</option><option>Turkish</option></select><button class="btn primary" onclick="translateAI()">ترجم</button></div><div class="result" id="translateOut"></div></div>
+<div class="tool-area" id="aiTranslate"><h3>🌍 الترجمة</h3><textarea id="translateIn" placeholder="اكتب النص المراد ترجمته..."></textarea><div class="tool-row"><select id="translateTarget"><option>Arabic</option><option>English</option><option>French</option><option>Spanish</option><option>German</option><option>Turkish</option></select><button class="btn primary" onclick="translateAI()">ترجم</button></div><div class="result" id="translateOut"></div></div><div class="tool-area" id="aiSummary"><h3>🧠 تلخيص النص</h3><textarea id="summaryIn" placeholder="ألصق النص الذي تريد تلخيصه..."></textarea><button class="btn primary" onclick="runAIExtra('لخص النص التالي بوضوح واختصار مع الحفاظ على أهم الأفكار:\n\n','summaryIn','summaryOut')">تلخيص</button><div class="result" id="summaryOut"></div></div><div class="tool-area" id="aiRewrite"><h3>✨ تحسين الكتابة</h3><textarea id="rewriteIn" placeholder="ألصق النص الذي تريد تحسينه..."></textarea><button class="btn primary" onclick="runAIExtra('حسن صياغة النص التالي واجعله واضحاً وسلساً مع الحفاظ على المعنى:\n\n','rewriteIn','rewriteOut')">تحسين</button><div class="result" id="rewriteOut"></div></div>
 </section>
 
 <section class="wrap" id="articles"><div class="section-head"><div><h2>📰 المقالات والمحتوى</h2><p>قسم قابل للتوسع بالمقالات والتصنيفات والبحث.</p></div></div>
@@ -142,6 +142,18 @@ footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;m
 <section class="wrap" id="entertainment"><div class="section-head"><div><h2>🎬 الترفيه والمشاهدة</h2><p>محتوى قانوني ومصادر مشاهدة رسمية، بدون استضافة أو نسخ غير مرخصة.</p></div></div>
 <div class="grid"><div class="card"><div class="icon">🍿</div><h3>أفلام ومحتوى مجاني قانوني</h3><p>مكان لعرض مصادر ومكتبات توفر محتوى مرخصاً أو ضمن الملكية العامة.</p><a class="btn" href="https://www.youtube.com/">استكشاف</a></div><div class="card"><div class="icon">▶️</div><h3>منصات المشاهدة</h3><p>روابط للخدمات الرسمية والمصادر التي تسمح بالمشاهدة.</p><a class="btn" href="https://www.youtube.com/">استكشاف</a></div><div class="card"><div class="icon">🎥</div><h3>فيديوهات مجانية</h3><p>دليل لمصادر فيديو مرخصة يمكن استخدامها بشكل قانوني.</p><a class="btn" href="https://www.pexels.com/videos/">استكشاف</a></div><div class="card"><div class="icon">📺</div><h3>قنوات ومحتوى</h3><p>تنظيم روابط القنوات والمحتوى العام في مكان واحد.</p><a class="btn" href="https://www.youtube.com/">استكشاف</a></div></div></section>
 
+<section class="wrap" id="productivity"><div class="section-head"><div><h2>⚡ الإنتاجية اليومية</h2><p>أدوات خفيفة تساعدك على الدراسة والعمل وتنظيم الوقت.</p></div></div>
+<div class="grid">
+<div class="card searchable"><div class="icon">⏲️</div><h3>ساعة إيقاف</h3><p>احسب مدة مهمة أو تمرين بدقة.</p><button class="btn primary" onclick="openTool('stopwatch')">فتح</button></div>
+<div class="card searchable"><div class="icon">🔠</div><h3>تحويل حالة النص</h3><p>حوّل النص إلى أحرف كبيرة أو صغيرة للإنجليزية.</p><button class="btn primary" onclick="openTool('caseTool')">فتح</button></div>
+<div class="card searchable"><div class="icon">📏</div><h3>عداد الكلمات المتقدم</h3><p>اعرف الكلمات والأحرف والأسطر والمسافات.</p><button class="btn primary" onclick="openTool('wordTool')">فتح</button></div>
+<div class="card searchable"><div class="icon">📝</div><h3>قائمة مهام</h3><p>أنشئ قائمة مهام مؤقتة داخل المتصفح.</p><button class="btn primary" onclick="openTool('todoTool')">فتح</button></div>
+</div>
+<div class="tool-area" id="stopwatch"><h3>⏲️ ساعة الإيقاف</h3><div id="swClock" style="font-size:42px;font-weight:900;margin:15px 0">00:00.0</div><button class="btn primary" onclick="swStart()">ابدأ</button> <button class="btn" onclick="swStop()">إيقاف</button> <button class="btn" onclick="swReset()">إعادة</button></div>
+<div class="tool-area" id="caseTool"><h3>🔠 تحويل حالة النص</h3><textarea id="caseIn" placeholder="اكتب نصاً بالإنجليزية..."></textarea><div class="tool-row"><button class="btn primary" onclick="caseUpper()">UPPERCASE</button><button class="btn" onclick="caseLower()">lowercase</button></div><div class="result" id="caseOut"></div></div>
+<div class="tool-area" id="wordTool"><h3>📏 عداد الكلمات</h3><textarea id="wordIn" placeholder="ألصق النص هنا..." oninput="countWords()"></textarea><div class="result" id="wordOut">الكلمات: 0 | الأحرف: 0 | الأسطر: 0</div></div>
+<div class="tool-area" id="todoTool"><h3>📝 قائمة المهام</h3><div class="tool-row"><input id="todoIn" placeholder="مهمة جديدة"><button class="btn primary" onclick="addTodo()">إضافة</button></div><div id="todoList" class="result">لا توجد مهام بعد.</div></div>
+</section>
 <section class="wrap"><div class="stats"><div class="stat"><b>30+</b>فكرة أداة قابلة للإضافة</div><div class="stat"><b>100%</b>متجاوب مع الهاتف</div><div class="stat"><b>0</b>حاجة لتثبيت الأدوات الأساسية</div><div class="stat"><b>∞</b>قابل للتوسعة</div></div></section>
 
 <section class="wrap" id="alltools"><div class="section-head"><div><h2>🚀 مركز الأدوات الشامل</h2><p>خدمات إضافية جاهزة للعمل مباشرة أو قابلة للربط بخدمات خارجية عند الحاجة.</p></div></div>
@@ -166,7 +178,7 @@ footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;m
 </section>
 </main>
 
-<footer><div class="foot"><div><h3>Scooltools</h3><p>منصة عربية متعددة الخدمات للأدوات والمحتوى الرقمي.</p></div><div><h3>الأدوات</h3><a href="#tools">أدوات مدرسية</a><a href="#media">الصور والفيديو</a><a href="#ai">الذكاء الاصطناعي</a></div><div><h3>المحتوى</h3><a href="#articles">المقالات</a><a href="#entertainment">الترفيه</a></div><div><h3>المساعدة</h3><a href="about.html">من نحن</a><a href="privacy.html">الخصوصية</a><a href="contact.html">تواصل معنا</a></div></div><div class="copy">© 2026 Scooltools — جميع الحقوق محفوظة</div></footer>
+<footer><div class="foot"><div><h3>Scooltools</h3><p>منصة عربية متعددة الخدمات للأدوات والمحتوى الرقمي والتعلم والإنتاجية.</p></div><div><h3>الأدوات</h3><a href="#tools">أدوات مدرسية</a><a href="#media">الصور والفيديو</a><a href="#ai">الذكاء الاصطناعي</a></div><div><h3>المحتوى</h3><a href="#articles">المقالات</a><a href="#productivity">الإنتاجية</a><a href="#entertainment">الترفيه</a><a href="learning.html">التعلم والاختبارات</a></div><div><h3>المساعدة</h3><a href="about.html">من نحن</a><a href="privacy.html">الخصوصية</a><a href="contact.html">تواصل معنا</a></div></div><div class="copy">© 2026 Scooltools — جميع الحقوق محفوظة</div></footer>
 
 <script>
 let timerSec=1500,timerInt=null,imgObj=null;
@@ -187,6 +199,16 @@ function searchSite(){let q=(heroSearch.value||siteSearch.value).toLowerCase().t
 siteSearch.addEventListener('input',()=>{let q=siteSearch.value.toLowerCase();document.querySelectorAll('.searchable').forEach(c=>c.style.display=!q||c.innerText.toLowerCase().includes(q)?'':'none')});
 
 async function callAI(){const p=document.getElementById('aiPrompt').value.trim(),out=document.getElementById('aiOut');if(!p){out.textContent='اكتب الطلب أولاً';return}out.textContent='⏳ جاري المعالجة...';try{const r=await fetch('/api/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p})}),d=await r.json();if(!r.ok)throw new Error(d.error||'فشل الطلب');out.textContent=d.text||'لم يرجع AI نصاً.'}catch(e){out.textContent='تعذر الاتصال بخدمة AI: '+e.message}}
+async function runAIExtra(prefix,inputId,outputId){const t=document.getElementById(inputId).value.trim(),out=document.getElementById(outputId);if(!t){out.textContent='اكتب النص أولاً';return}out.textContent='⏳ جاري المعالجة...';try{const r=await fetch('/api/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:prefix+t})}),d=await r.json();if(!r.ok)throw new Error(d.error||'فشل الطلب');out.textContent=d.text||'لم يرجع AI نصاً.'}catch(e){out.textContent='تعذر تنفيذ العملية: '+e.message}}
+let swTimer=null,swStarted=0;
+function swStart(){if(swTimer)return;swStarted=performance.now()-(window.swElapsed||0);swTimer=setInterval(()=>{window.swElapsed=performance.now()-swStarted;document.getElementById('swClock').textContent=(window.swElapsed/1000).toFixed(1).padStart(4,'0')},100)}
+function swStop(){clearInterval(swTimer);swTimer=null}
+function swReset(){swStop();window.swElapsed=0;document.getElementById('swClock').textContent='00:00.0'}
+function caseUpper(){caseOut.textContent=caseIn.value.toUpperCase()}
+function caseLower(){caseOut.textContent=caseIn.value.toLowerCase()}
+function countWords(){let t=wordIn.value;wordOut.textContent='الكلمات: '+(t.trim()?t.trim().split(/\\s+/).length:0)+' | الأحرف: '+t.length+' | الأسطر: '+(t?t.split(/\\n/).length:0)}
+let todos=[];
+function addTodo(){let v=todoIn.value.trim();if(!v)return;todos.push(v);todoIn.value='';todoList.innerHTML=todos.map((x,i)=>'<div style="padding:7px 0;border-bottom:1px solid #e4e7ec">☐ '+x+' <button class="btn" onclick="todos.splice('+i+',1);addTodo.render?.()">حذف</button></div>').join('');}
 async function translateAI(){const t=document.getElementById('translateIn').value.trim(),target=document.getElementById('translateTarget').value,out=document.getElementById('translateOut');if(!t){out.textContent='اكتب النص أولاً';return}out.textContent='⏳ جاري الترجمة...';try{const r=await fetch('/api/translate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:t,target})}),d=await r.json();if(!r.ok)throw new Error(d.error||'فشل الطلب');out.textContent=d.translation||'لم ترجع الترجمة نصاً.'}catch(e){out.textContent='تعذر تنفيذ الترجمة: '+e.message}}
 
 function readTxt(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>fileTextOut.textContent=r.result;r.readAsText(f)}
