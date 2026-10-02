@@ -113,7 +113,7 @@ footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;m
 <div class="tool-area" id="json"><h3>🧾 JSON Formatter</h3><textarea id="jsonIn" placeholder='{"name":"Scooltools"}'></textarea><button class="btn primary" onclick="formatJSON()">تنسيق</button><div class="result" id="jsonOut"></div></div>
 </section>
 
-<section class="wrap" id="media"><div class="section-head"><div><h2>🖼️🎬 استوديو الصور والفيديو</h2><p>اختَر ملفاً من جهازك وجرّب الأدوات التي تعمل محلياً داخل المتصفح.</p></div></div>
+<div class="notice" style="margin-top:12px">ℹ️ بعض الأدوات تعتمد على خدمات خارجية عند الحاجة، لكن الواجهة والطلب يمران عبر Scooltools ولا يتم عرض مفاتيح الخدمات في المتصفح.</div><section class="wrap" id="media"><div class="section-head"><div><h2>🖼️🎬 استوديو الصور والفيديو</h2><p>اختَر ملفاً من جهازك وجرّب الأدوات التي تعمل محلياً داخل المتصفح.</p></div></div>
 <div class="grid">
 <div class="card"><div class="icon">🖼️</div><h3>معاينة وضغط الصور</h3><p>اختَر صورة، عاينها، وحدد جودة التصدير والحجم.</p><button class="btn primary" onclick="openTool('imageTool')">فتح</button></div>
 <div class="card"><div class="icon">✂️</div><h3>قص وتغيير حجم الصورة</h3><p>إعادة تحجيم الصور قبل مشاركتها أو رفعها.</p><button class="btn primary" onclick="openTool('imageTool')">فتح</button></div>
@@ -197,7 +197,7 @@ function calculate(){const s=document.getElementById('calcIn').value;try{if(!/^[
 function convertUnit(){let v=+uv.value,f=uf.value,r=f==='km→m'?v*1000:f==='m→km'?v/1000:f==='kg→g'?v*1000:f==='g→kg'?v/1000:f==='°C→°F'?v*9/5+32:(v-32)*5/9;uout.textContent=r}
 function startTimer(){if(timerInt)return;timerInt=setInterval(()=>{if(timerSec<=0){clearInterval(timerInt);timerInt=null;alert('انتهى الوقت!');return}timerSec--;clock.textContent=String(Math.floor(timerSec/60)).padStart(2,'0')+':'+String(timerSec%60).padStart(2,'0')},1000)}
 function resetTimer(){clearInterval(timerInt);timerInt=null;timerSec=1500;clock.textContent='25:00'}
-function makeQR(){let t=encodeURIComponent(qrText.value);qrOut.innerHTML='<img class="preview" alt="QR" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data='+t+'"><div class="notice">تحتاج الأداة لاتصال بالإنترنت لخدمة QR الخارجية.</div>'}
+function makeQR(){let t=encodeURIComponent(qrText.value);qrOut.innerHTML='<img class="preview" alt="QR" src="/api/qr?data='+t+'"><div class="notice">Scooltools يولّد الصورة عبر واجهة الموقع؛ مزود توليد QR الخارجي تتم إدارته خلف API الموقع.</div>'}
 function textStats(){let t=textIn.value;textOut.textContent='الأحرف: '+t.length+'\nالكلمات: '+(t.trim()?t.trim().split(/\s+/).length:0)+'\nالأسطر: '+(t? t.split(/\n/).length:0)}
 function genPass(){let n=Math.min(64,Math.max(6,+plen.value||16)),c='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*',s='';for(let i=0;i<n;i++)s+=c[Math.floor(Math.random()*c.length)];passOut.textContent=s}
 function formatJSON(){try{jsonOut.textContent=JSON.stringify(JSON.parse(jsonIn.value),null,2)}catch(e){jsonOut.textContent='JSON غير صالح'}}
