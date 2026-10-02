@@ -1135,16 +1135,6 @@
         // function gtag(){dataLayer.push(arguments);}
         // gtag('js', new Date());
         // gtag('config', 'GA_MEASUREMENT_ID');
-
-        // Google AdSense
-        // (adsbygoogle = window.adsbygoogle || []).push({
-        //     google_ad_client: "ca-pub-xxxxxxxxxxxxxxxx",
-        //     enable_page_level_ads: true
-        // });
-
-        // Mediavine (if using Mediavine)
-        // <script src="https://scripts.mediavine.com/tags/xxxxxxxxxxxxxxxx.js"></script>
-
         // Share functionality
         document.querySelectorAll('.share-btn').forEach(button => {
             button.addEventListener('click', function(e) {
@@ -1171,16 +1161,6 @@
                 }
             });
         });
-
-        // Newsletter form
-        document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            // يمكنك إرسال البريد الإلكتروني إلى خادمك هنا
-            alert(`شكراً لاشتراكك! سيتم إرسال النشرة إلى: ${email}`);
-            this.reset();
-        });
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
