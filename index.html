@@ -58,15 +58,39 @@ footer{background:#0d1b34;color:#cbd5e1;margin-top:30px}.foot{max-width:1180px;m
 </head>
 <body>
 <div class="top">🚀 <b>Scooltools</b> — منصة واحدة للأدوات الرقمية والمحتوى المفيد</div>
-<header><nav class="nav"><a class="logo" href="#">S<span>cool</span>tools</a><div class="navlinks"><a href="#tools">الأدوات</a><a href="#media">الصور والفيديو</a><a href="#articles">المقالات</a><a href="#entertainment">ترفيه</a><a href="#ai">ذكاء اصطناعي</a></div><input class="search" id="siteSearch" placeholder="🔎 ابحث في الموقع"><button class="menu" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">☰</button></nav></header>
+<header><nav class="nav"><a class="logo" href="#">S<span>cool</span>tools</a><div class="navlinks"><a href="#tools">الأدوات</a><a href="#games">🧠 ألعاب العقل</a><a href="quran.html">📖 القرآن</a><a href="stories.html">📕 القصص</a><a href="#articles">المقالات</a><a href="#media">الصور والفيديو</a><a href="#ai">ذكاء اصطناعي</a></div><input class="search" id="siteSearch" placeholder="🔎 ابحث في الموقع"><button class="menu" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">☰</button></nav></header>
 
 <section class="hero"><div class="hero-inner">
 <h1>كل ما تحتاجه، في مكان واحد.</h1>
-<p>Scooltools منصة عربية تجمع الأدوات اليومية، معالجة الصور والفيديو، PDF، النصوص، الذكاء الاصطناعي، المقالات ومصادر المشاهدة القانونية.</p>
+<p>Scooltools منصة عربية متنوعة تجمع الأدوات الرقمية، ألعاب العقل، التعلم، المقالات، القصص، القرآن الكريم، الذكاء الاصطناعي والصور والفيديو في مكان واحد.</p>
 <div class="hero-search"><input id="heroSearch" placeholder="ابحث عن أداة مثل: ضغط صورة، PDF، QR..."><button onclick="searchSite()">بحث</button></div>
 </div></section>
 
 <main>
+<section class="wrap" id="categories"><div class="section-head"><div><h2>✨ استكشف Scooltools</h2><p>اختَر القسم الذي يناسبك وابدأ مباشرة.</p></div></div>
+<div class="grid">
+<a class="card" href="#tools"><div class="icon">🧰</div><h3>الأدوات الرقمية</h3><p>حاسبات، تحويلات، نصوص، QR وأدوات يومية.</p><span class="btn primary">استكشف الأدوات</span></a>
+<a class="card" href="#games"><div class="icon">🧠</div><h3>ألعاب العقل</h3><p>ألغاز وتحديات للذاكرة والمنطق والحساب.</p><span class="btn primary">العب الآن</span></a>
+<a class="card" href="quran.html"><div class="icon">📖</div><h3>القرآن الكريم</h3><p>قسم قراءة وبحث منظم للنص القرآني.</p><span class="btn primary">فتح القسم</span></a>
+<a class="card" href="stories.html"><div class="icon">📕</div><h3>القصص</h3><p>قصص قصيرة وحكايات وحكم في صفحات مستقلة.</p><span class="btn primary">قراءة القصص</span></a>
+<a class="card" href="#articles"><div class="icon">📚</div><h3>المقالات</h3><p>محتوى عن التقنية والذكاء الاصطناعي والتعلم.</p><span class="btn primary">اقرأ المزيد</span></a>
+<a class="card" href="#ai"><div class="icon">🤖</div><h3>الذكاء الاصطناعي</h3><p>مساعد AI وترجمة وأدوات ذكية.</p><span class="btn primary">اكتشف AI</span></a>
+<a class="card" href="#media"><div class="icon">🎨</div><h3>الصور والفيديو</h3><p>معاينة وتغيير حجم الصور والفيديو من المتصفح.</p><span class="btn primary">فتح الاستوديو</span></a>
+<a class="card" href="learning.html"><div class="icon">🎓</div><h3>التعلم والاختبارات</h3><p>أسئلة واختبارات ومحتوى تعليمي قابل للتوسع.</p><span class="btn primary">ابدأ التعلم</span></a>
+</div></section>
+
+<section class="wrap" id="games"><div class="section-head"><div><h2>🧠 ألعاب العقل</h2><p>تحديات خفيفة تعمل مباشرة داخل المتصفح.</p></div></div>
+<div class="grid">
+<div class="card"><div class="icon">🔢</div><h3>تحدي الحساب</h3><p>حل عمليات عشوائية بأسرع وقت.</p><button class="btn primary" onclick="startMathGame()">ابدأ التحدي</button></div>
+<div class="card"><div class="icon">🧩</div><h3>لغز اليوم</h3><p id="riddleText">شيء كلما أخذت منه كبر، ما هو؟</p><button class="btn" onclick="document.getElementById('riddleAnswer').classList.toggle('hidden')">إظهار الجواب</button><p id="riddleAnswer" class="hidden"><b>الجواب: الحفرة.</b></p></div>
+<div class="card"><div class="icon">🧠</div><h3>اختبار الذاكرة</h3><p>احفظ تسلسل الأرقام ثم أعد كتابته.</p><button class="btn primary" onclick="startMemoryGame()">ابدأ</button></div>
+<div class="card"><div class="icon">⚡</div><h3>تحدي السرعة</h3><p>اختبر سرعة استجابتك.</p><button class="btn primary" onclick="startSpeedGame()">ابدأ</button></div>
+</div>
+<div class="tool-area" id="mathGame"><h3>🔢 تحدي الحساب</h3><div class="result" id="mathQuestion"></div><div class="tool-row"><input id="mathAnswer" type="number" placeholder="الجواب"><button class="btn primary" onclick="checkMathGame()">تحقق</button></div><div class="result" id="mathResult"></div></div>
+<div class="tool-area" id="memoryGame"><h3>🧠 اختبار الذاكرة</h3><div class="result" id="memoryQuestion"></div><div class="tool-row"><input id="memoryAnswer" placeholder="اكتب الأرقام بالترتيب"><button class="btn primary" onclick="checkMemoryGame()">تحقق</button></div><div class="result" id="memoryResult"></div></div>
+<div class="tool-area" id="speedGame"><h3>⚡ تحدي السرعة</h3><p>اضغط الزر عندما يصبح جاهزاً.</p><button class="btn primary" id="speedBtn" onclick="speedClick()">اضغط!</button><div class="result" id="speedResult"></div></div>
+</section>
+
 <section class="wrap" id="tools"><div class="section-head"><div><h2>🧰 الأدوات الأكثر استعمالاً</h2><p>أدوات تعمل مباشرة في المتصفح بدون تعقيد.</p></div></div>
 <div class="grid" id="toolGrid">
 <div class="card searchable"><div class="icon">🧮</div><h3>الحاسبة</h3><p>عمليات حسابية سريعة.</p><button class="btn primary" onclick="openTool('calc')">فتح الأداة</button></div>
@@ -172,6 +196,13 @@ function dateDiff(){let a=new Date(d1.value),b=new Date(d2.value);if(isNaN(a)||i
 function checkUrl(){let u=urlIn.value.trim();try{let x=new URL(u);urlOut.textContent='الرابط صحيح شكلياً: '+x.protocol+'//'+x.host}catch(e){urlOut.textContent='الرابط غير صالح'}}
 function previewMd(){let s=mdIn.value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/^# (.*)$/gm,'<h2>$1</h2>').replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');mdOut.innerHTML=s}
 function showColor(){colorOut.textContent=colorIn.value.toUpperCase()}
+let mathA=0,mathB=0,memorySeq='',speedStart=0,speedReady=false;
+function startMathGame(){mathA=Math.floor(Math.random()*20)+1;mathB=Math.floor(Math.random()*20)+1;document.getElementById('mathQuestion').textContent=mathA+' + '+mathB+' = ؟';document.getElementById('mathResult').textContent='';openTool('mathGame')}
+function checkMathGame(){let v=+document.getElementById('mathAnswer').value;document.getElementById('mathResult').textContent=v===mathA+mathB?'✅ صحيح!':'❌ حاول مرة أخرى.'}
+function startMemoryGame(){memorySeq=String(Math.floor(1000+Math.random()*9000));document.getElementById('memoryQuestion').textContent='احفظ هذا الرقم: '+memorySeq;document.getElementById('memoryAnswer').value='';document.getElementById('memoryResult').textContent='بعد 3 ثوانٍ سيختفي...';openTool('memoryGame');setTimeout(()=>{document.getElementById('memoryQuestion').textContent='ما الرقم الذي حفظته؟';},3000)}
+function checkMemoryGame(){document.getElementById('memoryResult').textContent=document.getElementById('memoryAnswer').value===memorySeq?'✅ ممتاز!':'❌ الرقم غير صحيح.'}
+function startSpeedGame(){speedReady=false;document.getElementById('speedResult').textContent='استعد...';openTool('speedGame');setTimeout(()=>{speedReady=true;speedStart=performance.now();document.getElementById('speedBtn').textContent='اضغط الآن!';document.getElementById('speedResult').textContent='🟢 الآن!';},1000+Math.random()*2500)}
+function speedClick(){if(!speedReady){document.getElementById('speedResult').textContent='⏳ بكري!';return}document.getElementById('speedResult').textContent='⚡ زمن الاستجابة: '+Math.round(performance.now()-speedStart)+' ms';speedReady=false}
 function cleanText(){cleanOut.textContent=cleanIn.value.replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim()}
 </script>
 </body></html>
