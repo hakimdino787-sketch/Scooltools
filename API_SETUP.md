@@ -1,1 +1,4 @@
 # Scooltools API\n\nServerless API جاهز لـ Vercel.\n\n## Environment Variables\n- AI_API_KEY: الاسم الموصى به لمفتاح مزود الذكاء الاصطناعي (لا تضعه في GitHub).\n- OPENAI_API_KEY: مدعوم أيضاً إذا كان هذا هو الاسم الموجود عندك في Vercel.\n- AI_BASE_URL: اختياري، الافتراضي https://api.openai.com/v1\n- AI_MODEL: اختياري، الافتراضي gpt-4.1-mini\n\n## Endpoints\n- GET /api/health\n- POST /api/ai {"prompt":"..."}\n- POST /api/translate {"text":"...","target":"Arabic"}\n\nالواجهة الأمامية الموجودة في GitHub Pages لا يجب أن تحتوي على AI_API_KEY؛ تستعمل عنوان Vercel API فقط.
+
+## مولد QR
+مولد QR في واجهة Scooltools يستعمل المسار الداخلي `/api/qr`. هذا المسار يخفي عنوان مزود QR عن الواجهة، مع بقاء مزود التوليد خدمة خارجية لازمة لإنشاء الصورة.
