@@ -98,6 +98,55 @@ header{background:rgba(255,255,255,.82)!important;backdrop-filter:blur(18px)!imp
 .stats .stat{border-radius:20px!important}
 @media(max-width:850px){.v3-visuals{grid-template-columns:1fr 1fr;margin-top:-35px}.v3-visual:first-child{grid-column:1/-1}}
 @media(max-width:560px){.hero{min-height:520px!important}.v3-visuals{grid-template-columns:1fr;margin-top:-20px}.v3-visual:first-child{grid-column:auto}.v3-visual{min-height:190px}.hero h1{font-size:43px!important}}
+</style><style id="scooltools-v4">
+/* V4 — image cards across the homepage */
+.grid .card{
+  position:relative!important;
+  overflow:hidden!important;
+  padding:182px 22px 22px!important;
+  min-height:355px!important;
+  background:rgba(255,255,255,.96)!important;
+}
+.grid .card:before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:165px;
+  background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=82');
+  background-size:cover;
+  background-position:center;
+}
+.grid .card:after{
+  content:"";
+  position:absolute;
+  top:145px;
+  left:0;
+  right:0;
+  height:40px;
+  background:linear-gradient(180deg,transparent,#fff);
+  pointer-events:none;
+}
+.grid .card>*{position:relative;z-index:2}
+.grid .card .icon{
+  margin-top:-8px!important;
+  margin-bottom:10px!important;
+  box-shadow:0 8px 20px rgba(15,23,42,.08);
+}
+#categories .card:nth-child(1):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(2):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(3):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(4):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(5):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(6):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(7):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=82')}
+#categories .card:nth-child(8):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=82')}
+#games .card:nth-child(1):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=82')}
+#games .card:nth-child(2):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1000&q=82')}
+#games .card:nth-child(3):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=1000&q=82')}
+#games .card:nth-child(4):before{background-image:linear-gradient(180deg,rgba(8,10,30,.02),rgba(8,10,30,.58)),url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=82')}
+@media(max-width:560px){
+  .grid .card{min-height:335px!important;padding-top:175px!important}
+}
 </style></head>
 <body>
 <div class="top">🚀 <b>Scooltools</b> — منصة واحدة للأدوات الرقمية والمحتوى المفيد</div>
