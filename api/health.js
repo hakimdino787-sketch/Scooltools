@@ -1,1 +1,9 @@
-export default function handler(req,res){res.setHeader("Access-Control-Allow-Origin","*");res.setHeader("Access-Control-Allow-Methods","GET,OPTIONS");if(req.method==="OPTIONS")return res.status(204).end();res.status(200).json({ok:true,service:"Scooltools API",version:"1.0.0",time:new Date().toISOString(),aiConfigured:Boolean(process.env.AI_API_KEY||process.env.OPENAI_API_KEY)});}
+const ORIGIN="https://myscool.vercel.app";
+export default function handler(req,res){
+  res.setHeader("Access-Control-Allow-Origin",ORIGIN);
+  res.setHeader("Access-Control-Allow-Methods","GET,OPTIONS");
+  res.setHeader("Vary","Origin");
+  if(req.method==="OPTIONS")return res.status(204).end();
+  if(req.method!=="GET")return res.status(405).json({error:"GET required"});
+  res.status(200).json({ok:true,service:"Scooltools API",version:"1.0.0",time:new Date().toISOString()});
+}
