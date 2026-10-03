@@ -1,1 +1,20 @@
-const h={"Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"POST,OPTIONS"};export default async function handler(req,res){Object.entries(h).forEach(([k,v])=>res.setHeader(k,v));if(req.method==="OPTIONS")return res.status(204).end();if(req.method!=="POST")return res.status(405).json({error:"POST required"});const b=req.body||{},text=String(b.text||"").trim(),target=String(b.target||"").trim();if(!text||!target)return res.status(400).json({error:"text and target are required"});if(text.length>12000)return res.status(400).json({error:"text too long"});if(!(process.env.AI_API_KEY||process.env.OPENAI_API_KEY))return res.status(503).json({error:"AI API is not configured"});try{const base=(process.env.AI_BASE_URL||"https://api.openai.com/v1").replace(/\\/$/,""),r=await fetch(base+"/chat/completions",{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+process.env.AI_API_KEY},body:JSON.stringify({model:process.env.AI_MODEL||"gpt-4.1-mini",messages:[{role:"system",content:"Translate accurately. Return only the translation."},{role:"user",content:"Translate to "+target+":\\n"+text}],temperature:0.2,max_tokens:2000})}),d=await r.json();if(!r.ok)return res.status(r.status).json({error:d?.error?.message||"Provider error"});res.status(200).json({ok:true,translation:d?.choices?.[0]?.message?.content||""})}catch(e){res.status(500).json({error:"Translation failed"})}}
+const ORIGIN="https://myscool.vercel.app";
+const headers={"Access-Control-Allow-Origin":ORIGIN,"Access-Control-Allow-Headers":"Content-Type, Authorization","Access-Control-Allow-Methods":"POST,OPTIONS","Vary":"Origin"};
+export default async function handler(req,res){
+  Object.entries(headers).forEach(([k,v])=>res.setHeader(k,v));
+  if(req.method==="OPTIONS")return res.status(204).end();
+  if(req.method!=="POST")return res.status(405).json({error:"POST required"});
+  const b=req.body||{},text=String(b.text||"").trim(),target=String(b.target||"").trim();
+  if(!text||!target)return res.status(400).json({error:"text and target are required"});
+  if(text.length>12000)return res.status(400).json({error:"text too long"});
+  if(target.length>80)return res.status(400).json({error:"target too long"});
+  const apiKey=process.env.AI_API_KEY||process.env.OPENAI_API_KEY;
+  if(!apiKey)return res.status(503).json({error:"AI API is not configured"});
+  try{
+    const base=(process.env.AI_BASE_URL||"https://api.openai.com/v1").replace(/\/$/,"");
+    const r=await fetch(base+"/chat/completions",{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+apiKey},body:JSON.stringify({model:process.env.AI_MODEL||"gpt-4.1-mini",messages:[{role:"system",content:"Translate accurately. Return only the translation."},{role:"user",content:"Translate to "+target+":\n"+text}],temperature:0.2,max_tokens:2000})});
+    const d=await r.json();
+    if(!r.ok)return res.status(r.status).json({error:d?.error?.message||"Provider error"});
+    return res.status(200).json({ok:true,translation:d?.choices?.[0]?.message?.content||""});
+  }catch(e){return res.status(500).json({error:"Translation failed"});}
+}
