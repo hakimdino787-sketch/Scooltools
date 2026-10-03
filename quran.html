@@ -87,4 +87,20 @@ fetch(SOURCE).then(r=>{if(!r.ok)throw new Error('تعذر تحميل مصدر ا
 </nav>
 </section>
 <!-- Internal linking block: all sitemap pages -->
+
+<style id="scooltools-quran-visual">
+.quran-visual{margin:0 0 18px;border-radius:22px;overflow:hidden;height:210px;background:
+linear-gradient(90deg,rgba(9,18,35,.72),rgba(9,18,35,.18)),
+url("https://images.unsplash.com/photo-1581299894330-0ff5faf1529d?auto=format&fit=crop&w=1400&q=85") center/cover;
+display:flex;align-items:flex-end;padding:22px;color:#fff;box-shadow:0 12px 35px rgba(16,24,40,.12)}
+.quran-visual h2{margin:0;font-size:28px}
+</style>
+<script id="scooltools-quran-visual-script">
+(()=>{const hero=document.querySelector("main .hero");if(!hero||document.querySelector(".quran-visual"))return;
+const v=document.createElement("div");v.className="quran-visual";
+v.innerHTML="<h2>📖 القرآن الكريم — قراءة وتدبر</h2>";
+hero.parentNode.insertBefore(v,hero);
+})();
+</script>
+
 </body></html>
