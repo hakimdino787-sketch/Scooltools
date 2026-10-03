@@ -73,6 +73,31 @@ footer a{color:#cbd5e1}
 section[aria-label="روابط الموقع"]{box-shadow:var(--st-shadow)!important;border-color:var(--st-line)!important}
 .tag{color:var(--st-brand)!important}
 @media(max-width:700px){.nav{padding:11px 14px!important}.hero h1{font-size:36px!important}.wrap{padding-left:14px!important;padding-right:14px!important}.box{padding:20px!important}}
+</style><style id="scooltools-v3">
+:root{--v3-bg:#f7f8fc;--v3-ink:#111827;--v3-muted:#667085;--v3-purple:#6d5dfc;--v3-blue:#2563eb}
+body{background:linear-gradient(180deg,#fbfcff 0%,#f5f7fb 45%,#fff 100%)!important;color:var(--v3-ink)!important}
+.top{background:linear-gradient(90deg,#15152e,#30206f,#15152e)!important}
+header{background:rgba(255,255,255,.82)!important;backdrop-filter:blur(18px)!important}
+.hero{min-height:540px!important;display:flex;align-items:center;background:linear-gradient(90deg,rgba(10,12,35,.96) 0%,rgba(32,23,82,.83) 42%,rgba(58,39,130,.46) 72%,rgba(0,0,0,.12) 100%),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85') center/cover!important;position:relative!important}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 30%,rgba(112,93,252,.42),transparent 32%),radial-gradient(circle at 80% 80%,rgba(37,99,235,.3),transparent 30%);pointer-events:none}
+.hero-inner{width:100%;position:relative;z-index:2}.hero h1{font-size:clamp(42px,7vw,76px)!important;line-height:1.05!important;max-width:850px!important;text-shadow:0 8px 35px rgba(0,0,0,.25)}
+.hero p{font-size:19px!important;max-width:720px!important;color:#e7e7f7!important}
+.hero-search{max-width:760px!important;box-shadow:0 20px 60px rgba(0,0,0,.28)!important}
+.hero-search button{background:linear-gradient(135deg,#6d5dfc,#2563eb)!important}
+.v3-visuals{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px;margin-top:-54px;position:relative;z-index:5}
+.v3-visual{min-height:235px;border-radius:26px;overflow:hidden;position:relative;background-size:cover;background-position:center;box-shadow:0 20px 45px rgba(15,23,42,.13);display:flex;align-items:flex-end}
+.v3-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(10,12,30,.88) 100%)}
+.v3-visual .v3-content{position:relative;z-index:2;color:#fff;padding:24px}.v3-content h3{font-size:25px;margin:0 0 7px}.v3-content p{margin:0;color:#e6e7f0;line-height:1.6;font-size:14px}
+.v3-pill{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:6px 10px;border-radius:99px;font-size:12px;margin-bottom:10px;backdrop-filter:blur(8px)}
+.wrap{max-width:1240px!important}.section-head h2{font-size:29px!important}.section-head p{font-size:15px}
+.card{background:rgba(255,255,255,.9)!important;border:1px solid #e8eaf1!important;border-radius:24px!important;box-shadow:0 10px 35px rgba(16,24,40,.055)!important;padding:22px!important}
+.card:hover{transform:translateY(-7px)!important;box-shadow:0 20px 45px rgba(16,24,40,.11)!important}
+.card .icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#eef2ff,#f5f3ff);font-size:30px}
+.btn.primary{background:linear-gradient(135deg,#6d5dfc,#2563eb)!important}
+.article-img{background-size:cover!important;background-position:center!important}
+.stats .stat{border-radius:20px!important}
+@media(max-width:850px){.v3-visuals{grid-template-columns:1fr 1fr;margin-top:-35px}.v3-visual:first-child{grid-column:1/-1}}
+@media(max-width:560px){.hero{min-height:520px!important}.v3-visuals{grid-template-columns:1fr;margin-top:-20px}.v3-visual:first-child{grid-column:auto}.v3-visual{min-height:190px}.hero h1{font-size:43px!important}}
 </style></head>
 <body>
 <div class="top">🚀 <b>Scooltools</b> — منصة واحدة للأدوات الرقمية والمحتوى المفيد</div>
@@ -84,7 +109,11 @@ section[aria-label="روابط الموقع"]{box-shadow:var(--st-shadow)!import
 <div class="hero-search"><input id="heroSearch" placeholder="ابحث عن أداة مثل: ضغط صورة، PDF، QR..."><button onclick="searchSite()">بحث</button></div>
 </div></section>
 
-<main>
+<section class="wrap" style="padding-top:0"><div class="v3-visuals">
+<a class="v3-visual" href="#tools" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=82')"><div class="v3-content"><span class="v3-pill">🧰 أدوات رقمية</span><h3>أدوات تخدمك كل يوم</h3><p>حلول سريعة للنصوص، الصور، PDF، QR والحسابات.</p></div></a>
+<a class="v3-visual" href="learning.html" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=82')"><div class="v3-content"><span class="v3-pill">🎓 تعلم</span><h3>تعلم بطريقة أبسط</h3><p>محتوى وأدوات تساعدك على التعلم.</p></div></a>
+<a class="v3-visual" href="quran.html" style="background-image:url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=900&q=82')"><div class="v3-content"><span class="v3-pill">📖 قرآن</span><h3>القرآن الكريم</h3><p>قسم مخصص للقراءة والبحث.</p></div></a>
+</div></section><main>
 <section class="wrap" id="categories"><div class="section-head"><div><h2>✨ استكشف Scooltools</h2><p>اختَر القسم الذي يناسبك وابدأ مباشرة.</p></div></div>
 <div class="grid">
 <a class="card" href="#tools"><div class="icon">🧰</div><h3>الأدوات الرقمية</h3><p>حاسبات، تحويلات، نصوص، QR وأدوات يومية.</p><span class="btn primary">استكشف الأدوات</span></a>
