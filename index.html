@@ -530,6 +530,62 @@ function printTextPDF(){const t=document.getElementById('pdfText').value.trim();
 })();
 </script>
 
+<style id="scooltools-card-audit-v1">
+.grid .card .card-image{height:165px!important;width:calc(100% + 44px)!important;margin:0 -22px 18px!important;display:block!important;overflow:hidden!important;border-radius:0!important}
+.grid .card .card-image img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
+</style>
+<script id="scooltools-card-audit-images-v1">
+(()=>{const M={
+"الأدوات الرقمية":"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85",
+"ألعاب العقل":"https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=85",
+"القرآن الكريم":"https://images.unsplash.com/photo-1581299894330-0ff5faf1529d?auto=format&fit=crop&w=1200&q=85",
+"القصص":"https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=85",
+"المقالات":"https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85",
+"الذكاء الاصطناعي":"https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
+"الصور والفيديو":"https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=85",
+"التعلم والاختبارات":"https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85",
+"الحاسبة":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=85",
+"النسبة المئوية":"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85",
+"تحويل الوحدات":"https://images.unsplash.com/photo-1452457750107-cd084dce177d?auto=format&fit=crop&w=1200&q=85",
+"مؤقت الدراسة":"https://images.unsplash.com/photo-1495364141860-b0d03eccd065?auto=format&fit=crop&w=1200&q=85",
+"مولد QR":"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85",
+"أدوات النص":"https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=85",
+"كلمة مرور قوية":"https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
+"JSON Formatter":"https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85",
+"تحدي الحساب":"https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1200&q=85",
+"لغز اليوم":"https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?auto=format&fit=crop&w=1200&q=85",
+"اختبار الذاكرة":"https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=85",
+"تحدي السرعة":"https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=85",
+"كاتب ومساعد AI":"https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
+"الترجمة بالذكاء الاصطناعي":"https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85",
+"مولد بطاقة صورة":"https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85",
+"الصوت والنص":"https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1200&q=85",
+"تلخيص النص":"https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=85",
+"تحسين الكتابة":"https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85",
+"منظم الفاتورة":"https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=85",
+"حاسبة الدراسة":"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85",
+"منظم النص":"https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=85",
+"ساعة إيقاف":"https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=1200&q=85",
+"تحويل حالة النص":"https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85",
+"عداد الكلمات المتقدم":"https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=85",
+"قائمة مهام":"https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=85",
+"مولد أرقام عشوائية":"https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=85",
+"حاسبة العمر":"https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85",
+"حساب الأيام بين تاريخين":"https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85",
+"فحص الرابط":"https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
+"Markdown Preview":"https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85",
+"اختيار الألوان":"https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85",
+"تحويل النص إلى PDF":"https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1200&q=85",
+"معاينة وضغط الصور":"https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85",
+"قص وتغيير حجم الصورة":"https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85",
+"معاينة الفيديو":"https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85",
+"روابط الفيديو":"https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85",
+"دليل الأفلام القانونية":"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85",
+"Internet Archive":"https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1200&q=85",
+"NASA Video":"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85",
+"Pexels Videos":"https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
+};document.querySelectorAll(".grid .card").forEach(c=>{const t=(c.querySelector("h3")?.textContent||"").trim(),u=M[t];if(!u)return;let b=c.querySelector(".card-image");if(!b){b=document.createElement("div");b.className="card-image";const i=document.createElement("img");b.appendChild(i);c.prepend(b)}const i=b.querySelector("img");i.src=u;i.alt=t+" | Scooltools";i.loading="lazy";});})();
+</script>
 </body></html>');w.document.close();w.focus();setTimeout(()=>w.print(),300)}
 function makeInvoice(){const n=invName.value.trim()||'بدون اسم',i=invItem.value.trim()||'خدمة',p=+invPrice.value;if(!Number.isFinite(p)||p<0){invOut.textContent='أدخل مبلغاً صحيحاً غير سالب';return}invOut.textContent='فاتورة\nالعميل: '+n+'\nالبند: '+i+'\nالمبلغ: '+p.toFixed(2)+'\n\nيمكنك طباعتها من المتصفح.'}\nfunction printInvoice(){if(!invOut.textContent.trim()){makeInvoice();if(!invOut.textContent.trim())return}const w=window.open('','_blank');if(!w){alert('اسمح بالنوافذ المنبثقة للطباعة');return}const body=invOut.textContent.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\\n/g,'<br>');w.document.write('<!doctype html><html dir="rtl"><head><meta charset="utf-8"><title>فاتورة Scooltools</title><style>body{font-family:Arial;padding:40px;line-height:2;white-space:pre-wrap}</style></head><body>'+body+'</body></html>');w.document.close();w.focus();setTimeout(()=>w.print(),250)}
 function calcGrade(){const a=[+grade1.value,+grade2.value,+grade3.value].filter(Number.isFinite);gradeOut.textContent=a.length?'المتوسط: '+(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2):'أدخل النقط أولاً'}
