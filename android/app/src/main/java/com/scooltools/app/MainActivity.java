@@ -18,10 +18,8 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -32,7 +30,7 @@ import com.google.android.ump.ConsentInformation;
 import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.UserMessagingPlatform;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private static final String HOME_URL = "https://myscool.vercel.app/";
     private static final int FILE_CHOOSER_REQUEST = 4102;
     private WebView webView;
@@ -60,12 +58,11 @@ public class MainActivity extends AppCompatActivity {
         configureWebView();
         webView.loadUrl(HOME_URL);
         configureAdsAndConsent();
-        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
-            @Override public void handleOnBackPressed() {
-                if (webView != null && webView.canGoBack()) webView.goBack();
-                else finish();
-            }
-        });
+    }
+
+    @Override public void onBackPressed() {
+        if (webView != null && webView.canGoBack()) webView.goBack();
+        else super.onBackPressed();
     }
 
     private void configureWebView() {
