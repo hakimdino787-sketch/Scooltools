@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "Scooltools — كل أدواتك في مكان واحد",
+  "short_name": "Scooltools",
+  "description": "منصة عربية للأدوات الرقمية والتعلم والمحتوى المفيد.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f8fc",
+  "theme_color": "#171b4a",
+  "icons": [
+    {
+      "src": "/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
