@@ -26,7 +26,7 @@ jobs:
         run: node scripts/check-inline-js.cjs
 
   android-apk:
-    name: Build Android debug APK
+    name: Build Android APKs (test and configured AdMob)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -41,12 +41,21 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Assemble debug APK with AdMob test IDs
+      - name: Build safe test APK (Google test ad IDs)
         working-directory: android
-        run: gradle --no-daemon :app:assembleDebug
+        run: |
+          gradle --no-daemon :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-3940256099942544~3347511713' -PADMOB_BANNER_ID='ca-app-pub-3940256099942544/6300978111'
+          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/scooltools-test-ads.apk
+      - name: Build APK configured with Scooltools AdMob IDs
+        working-directory: android
+        run: |
+          gradle --no-daemon :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~2487863199' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1278723301'
+          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/scooltools-admob-configured.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: scooltools-android-debug-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: scooltools-android-apks
+          path: |
+            android/app/build/outputs/apk/debug/scooltools-test-ads.apk
+            android/app/build/outputs/apk/debug/scooltools-admob-configured.apk
           if-no-files-found: error
           retention-days: 14
