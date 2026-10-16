@@ -38,6 +38,7 @@ public class MainActivity extends Activity {
     private AdView adView;
     private ValueCallback<Uri[]> filePathCallback;
     private ConsentInformation consentInformation;
+    private boolean mobileAdsInitialized = false;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,17 +116,22 @@ public class MainActivity extends Activity {
     }
 
     private void configureAdsAndConsent() {
-        MobileAds.initialize(this, status -> runOnUiThread(() -> {
-            consentInformation = UserMessagingPlatform.getConsentInformation(this);
-            ConsentRequestParameters parameters = new ConsentRequestParameters.Builder().build();
-            consentInformation.requestConsentInfoUpdate(this, parameters,
-                () -> UserMessagingPlatform.loadAndShowConsentFormIfRequired(this, error -> loadBannerIfAllowed()),
-                error -> loadBannerIfAllowed());
-        }));
+        consentInformation = UserMessagingPlatform.getConsentInformation(this);
+        ConsentRequestParameters parameters = new ConsentRequestParameters.Builder().build();
+        consentInformation.requestConsentInfoUpdate(this, parameters,
+            () -> UserMessagingPlatform.loadAndShowConsentFormIfRequired(this, error -> initializeAdsIfAllowed()),
+            error -> initializeAdsIfAllowed());
+    }
+
+    private void initializeAdsIfAllowed() {
+        if (isFinishing() || consentInformation == null || !consentInformation.canRequestAds()
+                || mobileAdsInitialized) return;
+        mobileAdsInitialized = true;
+        MobileAds.initialize(this, status -> runOnUiThread(this::loadBannerIfAllowed));
     }
 
     private void loadBannerIfAllowed() {
-        if (isFinishing() || (consentInformation != null && !consentInformation.canRequestAds()) || adView != null) return;
+        if (isFinishing() || consentInformation == null || !consentInformation.canRequestAds() || adView != null) return;
         adView = new AdView(this);
         adView.setAdUnitId(BuildConfig.ADMOB_BANNER_ID);
         int widthDp = (int) (getResources().getDisplayMetrics().widthPixels / getResources().getDisplayMetrics().density);
