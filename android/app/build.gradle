@@ -1,6 +1,6 @@
 plugins { id "com.android.application" }
 
-def admobAppId = project.findProperty("ADMOB_APP_ID") ?: "ca-app-pub-2536808054649336~3749576618"
+def admobAppId = project.findProperty("ADMOB_APP_ID") ?: "ca-app-pub-2536808054649336~2487863199"
 def admobBannerId = project.findProperty("ADMOB_BANNER_ID") ?: "ca-app-pub-2536808054649336/1123413272"
 
 android {
