@@ -126,9 +126,24 @@ public class MainActivity extends Activity {
             error -> initializeAdsIfAllowed());
     }
 
+    private void showAdDiagnostic(String message) {
+        runOnUiThread(() -> {
+            if (isFinishing() || adLabel == null) return;
+            adLabel.setText(message);
+            adLabel.setVisibility(ViewGroup.VISIBLE);
+        });
+    }
+
     private void initializeAdsIfAllowed() {
-        if (isFinishing() || consentInformation == null || !consentInformation.canRequestAds()
-                || mobileAdsInitialized) return;
+        if (isFinishing() || mobileAdsInitialized) return;
+        if (consentInformation == null) {
+            showAdDiagnostic("AdMob: معلومات الموافقة غير متوفرة");
+            return;
+        }
+        if (!consentInformation.canRequestAds()) {
+            showAdDiagnostic("AdMob: الطلب متوقف بسبب حالة الموافقة");
+            return;
+        }
         mobileAdsInitialized = true;
         MobileAds.initialize(this, status -> runOnUiThread(this::loadBannerIfAllowed));
     }
@@ -154,7 +169,10 @@ public class MainActivity extends Activity {
                         + ", domain=" + error.getDomain() + ", message=" + error.getMessage());
                 runOnUiThread(() -> {
                     if (adView != null) adView.setVisibility(ViewGroup.GONE);
-                    if (adLabel != null) adLabel.setVisibility(ViewGroup.GONE);
+                    if (adLabel != null) {
+                        adLabel.setText("فشل الإعلان (" + error.getCode() + "): " + error.getMessage());
+                        adLabel.setVisibility(ViewGroup.VISIBLE);
+                    }
                 });
             }
         });
