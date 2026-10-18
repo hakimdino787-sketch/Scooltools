@@ -1,4 +1,4 @@
-name: Scooltools web check and Android APK
+name: MyScool web check and Android APK
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         run: node scripts/check-inline-js.cjs
 
   android-apk:
-    name: Build Android APKs (test and configured AdMob)
+    name: Build Android APKs (test and MyScool AdMob)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -45,18 +45,18 @@ jobs:
         working-directory: android
         run: |
           gradle --no-daemon :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-3940256099942544~3347511713' -PADMOB_BANNER_ID='ca-app-pub-3940256099942544/6300978111'
-          cp app/build/outputs/apk/debug/app-debug.apk /tmp/scooltools-test-ads.apk
-      - name: Build APK configured with Scooltools AdMob IDs
+          cp app/build/outputs/apk/debug/app-debug.apk /tmp/myscool-test-ads.apk
+      - name: Build APK configured with MyScool AdMob IDs
         working-directory: android
         run: |
-          gradle --no-daemon clean :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~2487863199' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1278723301'
-          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/scooltools-admob-configured.apk
-          cp /tmp/scooltools-test-ads.apk app/build/outputs/apk/debug/scooltools-test-ads.apk
+          gradle --no-daemon clean :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~3749576618' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1123413272'
+          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/myscool-admob-configured.apk
+          cp /tmp/myscool-test-ads.apk app/build/outputs/apk/debug/myscool-test-ads.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: scooltools-android-apks
+          name: myscool-android-apks
           path: |
-            android/app/build/outputs/apk/debug/scooltools-test-ads.apk
-            android/app/build/outputs/apk/debug/scooltools-admob-configured.apk
+            android/app/build/outputs/apk/debug/myscool-test-ads.apk
+            android/app/build/outputs/apk/debug/myscool-admob-configured.apk
           if-no-files-found: error
           retention-days: 14
