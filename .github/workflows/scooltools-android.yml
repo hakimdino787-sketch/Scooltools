@@ -1,4 +1,4 @@
-name: MyScool web check and Android APK
+name: MyScool web check and production Android APK
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         run: node scripts/check-inline-js.cjs
 
   android-apk:
-    name: Build Android APKs (test and MyScool AdMob)
+    name: Build MyScool APK with configured AdMob IDs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -41,22 +41,14 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Build safe test APK (Google test ad IDs)
+      - name: Build MyScool APK
         working-directory: android
         run: |
-          gradle --no-daemon :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-3940256099942544~3347511713' -PADMOB_BANNER_ID='ca-app-pub-3940256099942544/6300978111'
-          cp app/build/outputs/apk/debug/app-debug.apk /tmp/myscool-test-ads.apk
-      - name: Build APK configured with MyScool AdMob IDs
-        working-directory: android
-        run: |
-          gradle --no-daemon clean :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~3749576618' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1123413272'
-          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/myscool-admob-configured.apk
-          cp /tmp/myscool-test-ads.apk app/build/outputs/apk/debug/myscool-test-ads.apk
+          gradle --no-daemon clean :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~2487863199' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1123413272'
+          cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/MyScool-AdMob.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: myscool-android-apks
-          path: |
-            android/app/build/outputs/apk/debug/myscool-test-ads.apk
-            android/app/build/outputs/apk/debug/myscool-admob-configured.apk
+          name: myscool-android-apk
+          path: android/app/build/outputs/apk/debug/MyScool-AdMob.apk
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 30
