@@ -1,6 +1,6 @@
-# Scooltools Android app
+# MyScool Android app
 
-This native Android shell loads the existing live site at https://myscool.vercel.app/ and places a Google Mobile Ads banner below the web content. Google's User Messaging Platform SDK requests and displays consent where required.
+This native Android shell loads https://myscool.vercel.app/ and displays a Google Mobile Ads adaptive banner below the web content. Google's User Messaging Platform requests and displays consent where required.
 
 ## Build a debug APK
 
@@ -13,19 +13,14 @@ gradle :app:assembleDebug
 
 APK output: `android/app/build/outputs/apk/debug/app-debug.apk`.
 
-## AdMob IDs
+## AdMob configuration
 
-This project intentionally defaults to Google's official **test** app and banner IDs. Do not publish a release build with test IDs or click test ads expecting revenue.
+The default configured IDs are registered for MyScool:
 
-After registering Scooltools as its own app in AdMob, build with its app-specific IDs:
+- App ID: `ca-app-pub-2536808054649336~3749576618`
+- Banner unit ID: `ca-app-pub-2536808054649336/1123413272`
 
-```bash
-gradle :app:assembleDebug \
-  -PADMOB_APP_ID='ca-app-pub-XXXXXXXXXXXXXXXX~YYYYYYYYYY' \
-  -PADMOB_BANNER_ID='ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ'
-```
-
-The App ID and banner unit ID are different values. Do not reuse IDs belonging to another app. Configure the applicable privacy message in AdMob before serving real ads.
+Use Google's official test IDs for development tests. Do not click your own live ads. Ad delivery may be limited while AdMob reviews the app or account, and the app must have applicable privacy/consent messaging configured.
 
 ## Included
 
