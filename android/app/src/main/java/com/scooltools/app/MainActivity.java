@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
     private WebView webView;
     private LinearLayout root;
     private AdView adView;
+    private TextView adLabel;
     private ValueCallback<Uri[]> filePathCallback;
     private ConsentInformation consentInformation;
     private boolean mobileAdsInitialized = false;
@@ -50,11 +52,12 @@ public class MainActivity extends Activity {
         setContentView(root);
         webView = new WebView(this);
         root.addView(webView, new LinearLayout.LayoutParams(-1, 0, 1f));
-        TextView adLabel = new TextView(this);
+        adLabel = new TextView(this);
         adLabel.setText("إعلان");
         adLabel.setTextColor(Color.rgb(102, 112, 133));
         adLabel.setTextSize(10);
         adLabel.setGravity(Gravity.CENTER);
+        adLabel.setVisibility(ViewGroup.GONE);
         root.addView(adLabel, new LinearLayout.LayoutParams(-1, ViewGroup.LayoutParams.WRAP_CONTENT));
         configureWebView();
         webView.loadUrl(HOME_URL);
@@ -136,8 +139,24 @@ public class MainActivity extends Activity {
         adView.setAdUnitId(BuildConfig.ADMOB_BANNER_ID);
         int widthDp = (int) (getResources().getDisplayMetrics().widthPixels / getResources().getDisplayMetrics().density);
         adView.setAdSize(AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, widthDp));
+        adView.setVisibility(ViewGroup.GONE);
         adView.setAdListener(new AdListener() {
-            @Override public void onAdFailedToLoad(@NonNull LoadAdError error) { /* App remains usable without ads. */ }
+            @Override public void onAdLoaded() {
+                runOnUiThread(() -> {
+                    if (!isFinishing()) {
+                        adView.setVisibility(ViewGroup.VISIBLE);
+                        adLabel.setVisibility(ViewGroup.VISIBLE);
+                    }
+                });
+            }
+            @Override public void onAdFailedToLoad(@NonNull LoadAdError error) {
+                Log.w("MyScoolAdMob", "Banner failed: code=" + error.getCode()
+                        + ", domain=" + error.getDomain() + ", message=" + error.getMessage());
+                runOnUiThread(() -> {
+                    if (adView != null) adView.setVisibility(ViewGroup.GONE);
+                    if (adLabel != null) adLabel.setVisibility(ViewGroup.GONE);
+                });
+            }
         });
         root.addView(adView, new LinearLayout.LayoutParams(-1, ViewGroup.LayoutParams.WRAP_CONTENT));
         adView.loadAd(new AdRequest.Builder().build());
