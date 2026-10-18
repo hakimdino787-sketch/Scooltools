@@ -44,7 +44,7 @@ jobs:
       - name: Build MyScool APK
         working-directory: android
         run: |
-          gradle --no-daemon clean :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~2487863199' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1123413272'
+          gradle --no-daemon clean :app:assembleDebug -PADMOB_APP_ID='ca-app-pub-2536808054649336~2487863199' -PADMOB_BANNER_ID='ca-app-pub-2536808054649336/1278723301'
           cp app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/MyScool-AdMob.apk
       - uses: actions/upload-artifact@v4
         with:
