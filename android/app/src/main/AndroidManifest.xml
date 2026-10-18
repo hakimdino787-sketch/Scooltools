@@ -5,7 +5,7 @@
     <application
         android:allowBackup="false"
         android:usesCleartextTraffic="false"
-        android:label="Scooltools"
+        android:label="MyScool"
         android:icon="@drawable/ic_scooltools"
         android:theme="@android:style/Theme.Material.Light.NoActionBar"
         android:supportsRtl="true">
