@@ -36,9 +36,30 @@ section[aria-label="روابط الموقع"]{box-shadow:var(--st-shadow)!import
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"القرآن الكريم كاملاً | Scooltools","url":"https://myscool.vercel.app/quran.html","inLanguage":"ar","description":"القرآن الكريم كاملاً بالرسم العثماني، مع السور والآيات والبحث، ضمن Scooltools.","isPartOf":{"@type":"WebSite","name":"Scooltools","url":"https://myscool.vercel.app/"}}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://myscool.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "📖 القرآن الكريم",
+      "item": "https://myscool.vercel.app/quran.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header><div class="nav"><div class="brand">Scooltools • القرآن الكريم</div><a href="/">← الرئيسية</a></div></header>
+<nav aria-label="مسار التنقل" style="max-width:1150px;margin:12px auto;padding:8px 18px;font:14px/1.8 Arial,'Segoe UI',sans-serif;color:#667085"><a href="https://myscool.vercel.app/" style="color:#2563eb;text-decoration:none">الرئيسية</a><span aria-hidden="true"> / </span><span aria-current="page" style="color:#344054">📖 القرآن الكريم</span></nav>
 <main>
 <section class="hero"><h1>📖 القرآن الكريم</h1><p>قراءة القرآن الكريم كاملاً بالرسم العثماني داخل واجهة Scooltools، مع اختيار السور والبحث في الآيات.</p><div class="source notice"><strong>المصدر:</strong> Tanzil Project — Quran Text. النص يُعرض كما هو من مصدر Tanzil دون تعديل. <a href="https://tanzil.net/" target="_blank" rel="noopener noreferrer">زيارة Tanzil</a> · <a href="https://tanzil.net/download/" target="_blank" rel="noopener noreferrer">تحديثات وتنزيل النص</a></div></section>
 <section class="card"><div class="controls"><div class="field"><label for="surah">اختر السورة</label><select id="surah"></select></div><div class="field"><label for="search">البحث في الآيات</label><input id="search" placeholder="اكتب كلمة أو جزءاً من آية..." autocomplete="off"></div></div><div class="toolbar" style="margin-top:12px"><span id="status" class="pill">جاري تحميل القرآن...</span><span id="resultCount" class="pill">—</span></div></section>
