@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - fix/scooltools-android-admob
+      - fix/myscool-superpowers
   pull_request:
     branches:
       - main
