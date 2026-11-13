@@ -4,7 +4,9 @@ export default async function handler(req,res){
   Object.entries(headers).forEach(([k,v])=>res.setHeader(k,v));
   if(req.method==="OPTIONS")return res.status(204).end();
   if(req.method!=="POST")return res.status(405).json({error:"POST required"});
-  const b=req.body||{},text=String(b.text||"").trim(),target=String(b.target||"").trim();
+  const b=req.body||{};
+  if(typeof b.text!=="string"||typeof b.target!=="string")return res.status(400).json({error:"text and target are required"});
+  const text=b.text.trim(),target=b.target.trim();
   if(!text||!target)return res.status(400).json({error:"text and target are required"});
   if(text.length>12000)return res.status(400).json({error:"text too long"});
   if(target.length>80)return res.status(400).json({error:"target too long"});
