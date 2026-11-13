@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - fix/scooltools-android-admob
+      - fix/myscool-superpowers
   pull_request:
     branches:
       - main
@@ -15,7 +16,7 @@ permissions:
 
 jobs:
   web-check:
-    name: Check website JavaScript
+    name: Check website JavaScript and API handlers
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -24,6 +25,8 @@ jobs:
           node-version: 24
       - name: Validate inline JavaScript
         run: node scripts/check-inline-js.cjs
+      - name: Test API handler validation
+        run: node --test tests/api-handlers.test.mjs
 
   android-apk:
     name: Build MyScool APK with configured AdMob IDs
