@@ -25,7 +25,7 @@ jobs:
       - name: Validate inline JavaScript
         run: node scripts/check-inline-js.cjs
       - name: Test API handler validation
-        run: node --experimental-default-type=module --test tests/api-handlers.test.mjs
+        run: node --test tests/api-handlers.test.mjs
 
   android-apk:
     name: Build MyScool APK with configured AdMob IDs
